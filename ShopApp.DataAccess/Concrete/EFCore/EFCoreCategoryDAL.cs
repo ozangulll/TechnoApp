@@ -10,9 +10,11 @@ namespace ShopApp.DataAccess.Concrete.EFCore
 {
     public class EFCoreCategoryDAL : ICategoryDAL
     {
+        ShopContext db=new ShopContext();
         public void Create(Category entity)
         {
-            throw new NotImplementedException();
+            db.Categories.Add(entity);
+            db.SaveChanges();
         }
 
         public void Delete(Category entity)
