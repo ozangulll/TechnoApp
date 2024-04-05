@@ -20,27 +20,42 @@ namespace ShopApp.DataAccess.Concrete.EFCore
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            using(var context=new TContext()){
+                context.Set<T>().Remove(entity);
+                context.SaveChanges();
+            }
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> filter)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter=null)
         {
-            throw new NotImplementedException();
+           using(var context=new TContext()){
+                return filter==null?context.Set<T>():context.Set<T>().Where(filter);
+            }
         }
 
         public T GetById(int id)
         {
-            throw new NotImplementedException();
+            using(var context=new TContext()){
+                return context.Set<T>().Find(id);
+                
+            }
         }
 
         public T GetOne(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+           using(var context=new TContext()){
+                return context.Set<T>().Where(filter).SingleOrDefault();
+
+            }
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            using(var context=new TContext()){
+                context.Entry(entity).State=EntityState.Modified;
+                context.SaveChanges();
+                
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ShopApp.DataAccess.Abstract
     {
         T GetById(int id);
         T GetOne(Expression<Func<T,bool>> filter);
-        IQueryable<T> GetAll(Expression<Func<T,bool>>filter);
+        IEnumerable<T> GetAll(Expression<Func<T,bool>>filter);
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);
