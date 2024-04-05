@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "ShopApp.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ShopApp.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopApp.Entities.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ShopApp.Entities/1.0.0": {
+      "type": "project",
+      "path": "../ShopApp.Entities/ShopApp.Entities.csproj",
+      "msbuildProject": "../ShopApp.Entities/ShopApp.Entities.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "ShopApp.Entities >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Acer\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+              "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
