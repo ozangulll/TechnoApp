@@ -10,9 +10,11 @@ namespace ShopApp.DataAccess.Concrete.EFCore
 {
     public class EFCoreProductDAL : IProductDAL
     {
+        ShopContext db= new ShopContext();
         public void Create(Product entity)
         {
-            throw new NotImplementedException();
+           db.Products.Add(entity);
+           db.SaveChanges();
         }
 
         public void Delete(Product entity)
@@ -31,6 +33,11 @@ namespace ShopApp.DataAccess.Concrete.EFCore
         }
 
         public Product GetOne(Expression<Func<Product, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Product> GetPopularProducts()
         {
             throw new NotImplementedException();
         }
