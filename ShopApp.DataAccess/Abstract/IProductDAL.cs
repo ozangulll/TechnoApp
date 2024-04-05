@@ -7,13 +7,10 @@ using ShopApp.Entities;
 
 namespace ShopApp.DataAccess.Abstract
 {
-    public interface IProductDAL
+    public interface IProductDAL:IRepository<Product>
     {
-        Product GetById(int id);
-        Product GetOne(Expression<Func<Product,bool>> filter);
-        IQueryable<Product> GetAll(Expression<Func<Product,bool>>filter);
-        void Create(Product entity);
-        void Update(Product entity);
-        void Delete(Product entity);
+        //zaten fix olan methodları biz repositoryden alıcaz fakat üstüne burada mesela producta özel olan methodları ekleyebileceğiz.
+
+        IEnumerable<Product> GetPopularProducts();
     }
 }
