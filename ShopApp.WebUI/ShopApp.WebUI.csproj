@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShopApp.DataAccess\ShopApp.DataAccess.csproj" />
+    <ProjectReference Include="..\ShopApp.Business\ShopApp.Business.csproj" />
+    <ProjectReference Include="..\ShopApp.Entities\ShopApp.Entities.csproj" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
