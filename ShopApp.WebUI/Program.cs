@@ -5,12 +5,13 @@ using Microsoft.Extensions.Hosting;
 using ShopApp.Business.Abstract;
 using ShopApp.Business.Concrete;
 using ShopApp.DataAccess.Abstract;
+using ShopApp.DataAccess.Concrete.EFCore;
 using ShopApp.DataAccess.Concrete.Memory;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Services configuration
-builder.Services.AddScoped<IProductDAL, MemoryProductDAL>();
+builder.Services.AddScoped<IProductDAL, EFCoreProductDAL>();
 builder.Services.AddScoped<IProductService,ProductManager>();
 builder.Services.AddMvc();
 

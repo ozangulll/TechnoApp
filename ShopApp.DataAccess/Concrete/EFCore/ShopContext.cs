@@ -11,7 +11,7 @@ namespace ShopApp.DataAccess.Concrete.EFCore
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=LAPTOP-30HS78PS\SQLEXPRESS;Database=eCommerceDB;integrated security=true;");
+            optionsBuilder.UseSqlServer(@"Server=LAPTOP-30HS78PS\SQLEXPRESS;Database=eCommerceDB;integrated security=true; TrustServerCertificate=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

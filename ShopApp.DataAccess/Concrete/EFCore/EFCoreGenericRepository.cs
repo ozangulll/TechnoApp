@@ -26,12 +26,21 @@ namespace ShopApp.DataAccess.Concrete.EFCore
             }
         }
 
-        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter=null)
+     public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null)
+{
+    using (var context = new TContext())
+    {
+        IQueryable<T> query = context.Set<T>();
+
+        if (filter != null)
         {
-           using(var context=new TContext()){
-                return filter==null?context.Set<T>():context.Set<T>().Where(filter);
-            }
+            query = query.Where(filter);
         }
+
+        return query.ToList();
+    }
+}
+
 
         public T GetById(int id)
         {
