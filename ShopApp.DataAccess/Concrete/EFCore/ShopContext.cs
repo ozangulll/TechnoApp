@@ -13,6 +13,10 @@ namespace ShopApp.DataAccess.Concrete.EFCore
         {
             optionsBuilder.UseSqlServer(@"Server=LAPTOP-30HS78PS\SQLEXPRESS;Database=eCommerceDB;integrated security=true;");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductCategory>().HasKey(c=>new {c.CategoryId,c.ProductId});
+        }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
     }
