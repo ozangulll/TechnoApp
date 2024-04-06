@@ -1,0 +1,11 @@
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\bin\Debug\net7.0\ShopApp.Entities.deps.json
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\bin\Debug\net7.0\ShopApp.Entities.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\bin\Debug\net7.0\ShopApp.Entities.pdb
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\ShopApp.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\ShopApp.Entities.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\ShopApp.Entities.AssemblyInfo.cs
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\ShopApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\ShopApp.Entities.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\refint\ShopApp.Entities.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\ShopApp.Entities.pdb
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Entities\obj\Debug\net7.0\ref\ShopApp.Entities.dll

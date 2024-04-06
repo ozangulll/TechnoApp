@@ -1,0 +1,17 @@
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\bin\Debug\net7.0\ShopApp.Business.deps.json
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\bin\Debug\net7.0\ShopApp.Business.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\bin\Debug\net7.0\ShopApp.Business.pdb
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\bin\Debug\net7.0\ShopApp.DataAccess.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\bin\Debug\net7.0\ShopApp.Entities.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\bin\Debug\net7.0\ShopApp.Entities.pdb
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\bin\Debug\net7.0\ShopApp.DataAccess.pdb
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.csproj.AssemblyReference.cache
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.AssemblyInfo.cs
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.csproj.CopyComplete
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\refint\ShopApp.Business.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ShopApp.Business.pdb
+C:\Users\Acer\Desktop\eCommerce\ShopApp.Business\obj\Debug\net7.0\ref\ShopApp.Business.dll
