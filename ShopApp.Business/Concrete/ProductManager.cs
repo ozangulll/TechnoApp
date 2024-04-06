@@ -38,6 +38,11 @@ namespace ShopApp.Business.Concrete
             return _ProductDAL.GetById(id);
         }
 
+        public List<Product> GetPopularProduct()
+        {
+            return _ProductDAL.GetAll().ToList();
+        }
+
         public void Update(Product entity)
         {
             _ProductDAL.Update(entity);
