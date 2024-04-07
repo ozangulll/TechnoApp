@@ -71,3 +71,5 @@ C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\obj\Debug\net7.0\refint\ShopApp.We
 C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\obj\Debug\net7.0\ShopApp.WebUI.pdb
 C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\obj\Debug\net7.0\ShopApp.WebUI.genruntimeconfig.cache
 C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\obj\Debug\net7.0\ref\ShopApp.WebUI.dll
+C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\bin\Debug\net7.0\package-lock.json
+C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\bin\Debug\net7.0\package.json
