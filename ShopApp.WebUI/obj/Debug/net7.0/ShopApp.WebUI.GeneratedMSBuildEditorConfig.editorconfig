@@ -9,13 +9,13 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ShopApp.WebUI
 build_property.RootNamespace = ShopApp.WebUI
-build_property.ProjectDir = C:\Users\Acer\Desktop\eCommerce\shopapp.webui\
+build_property.ProjectDir = C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Acer\Desktop\eCommerce\shopapp.webui
+build_property.MSBuildProjectDirectory = C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Home/Index.cshtml]
+[C:/Users/Acer/Desktop/eCommerce/ShopApp.WebUI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

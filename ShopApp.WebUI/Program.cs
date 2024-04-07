@@ -7,6 +7,7 @@ using ShopApp.Business.Concrete;
 using ShopApp.DataAccess.Abstract;
 using ShopApp.DataAccess.Concrete.EFCore;
 using ShopApp.DataAccess.Concrete.Memory;
+using ShopApp.WebUI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,13 +17,15 @@ builder.Services.AddScoped<IProductService,ProductManager>();
 builder.Services.AddMvc();
 
 var app = builder.Build();
-app.MapDefaultControllerRoute();
+
 // HTTP request pipeline configuration
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-
+app.UseStaticFiles();
+app.CustomStaticFiles();
+app.MapDefaultControllerRoute();
 //app.MapGet("/", () => "Hello World!");
 
 app.Run();
