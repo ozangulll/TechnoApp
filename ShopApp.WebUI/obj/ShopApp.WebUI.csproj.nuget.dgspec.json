@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\ShopApp.WebUI.csproj": {}
+    "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj": {}
   },
   "projects": {
     "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Business\\ShopApp.Business.csproj": {
@@ -196,14 +196,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\ShopApp.WebUI.csproj": {
+    "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\ShopApp.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj",
         "projectName": "ShopApp.WebUI",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\ShopApp.WebUI.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",

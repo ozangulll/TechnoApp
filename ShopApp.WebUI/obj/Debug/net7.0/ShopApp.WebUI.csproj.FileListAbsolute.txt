@@ -73,3 +73,4 @@ C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\obj\Debug\net7.0\ShopApp.WebUI.gen
 C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\obj\Debug\net7.0\ref\ShopApp.WebUI.dll
 C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\bin\Debug\net7.0\package-lock.json
 C:\Users\Acer\Desktop\eCommerce\ShopApp.WebUI\bin\Debug\net7.0\package.json
+C:\Users\Acer\Desktop\eCommerce\shopapp.webui\bin\Debug\net7.0\ShopApp.WebUI.staticwebassets.runtime.json
