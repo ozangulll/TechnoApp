@@ -16,12 +16,18 @@ namespace ShopApp.DataAccess.Concrete.EFCore
             throw new NotImplementedException();
         }
 
-        public Product GetProductDetails(int id )
+        public Product GetProductDetails(int id)
         {
            using (var context=new ShopContext()){
                 return context.Products.Where(i => i.Id == id).Include(i => i.ProductCategories).ThenInclude(i => i.Category).FirstOrDefault();
            }
         }
 
+        IEnumerable<Product> IProductDAL.GetPopularProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+       
     }
 }

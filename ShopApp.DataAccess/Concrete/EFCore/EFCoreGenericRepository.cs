@@ -26,7 +26,7 @@ namespace ShopApp.DataAccess.Concrete.EFCore
             }
         }
 
-     public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null)
+     public List<T> GetAll(Expression<Func<T, bool>> filter = null)
 {
     using (var context = new TContext())
     {

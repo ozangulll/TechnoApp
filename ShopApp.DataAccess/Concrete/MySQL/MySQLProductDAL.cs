@@ -20,7 +20,7 @@ namespace ShopApp.DataAccess.Concrete.MySQL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Product> GetAll(Expression<Func<Product, bool>> filter)
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter)
         {
             throw new NotImplementedException();
         }

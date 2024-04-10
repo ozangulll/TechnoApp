@@ -15,6 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Services configuration
 builder.Services.AddScoped<IProductDAL, EFCoreProductDAL>();
 builder.Services.AddScoped<IProductService,ProductManager>();
+builder.Services.AddScoped<ICategoryDAL,EFCoreCategoryDAL>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
 builder.Services.AddMvc();

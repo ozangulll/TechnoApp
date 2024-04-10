@@ -20,7 +20,7 @@ namespace ShopApp.DataAccess.Concrete.Memory
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Product> GetAll(Expression<Func<Product, bool>> filter = null)
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             var products=new List<Product>(){
                 new Product() {Id=1,Name="Samsung S6",ImageUrl="1.jpg", Price=1000},
