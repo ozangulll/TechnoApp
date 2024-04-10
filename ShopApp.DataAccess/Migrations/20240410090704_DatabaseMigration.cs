@@ -5,7 +5,7 @@
 namespace ShopApp.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class SecondCreate : Migration
+    public partial class DatabaseMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

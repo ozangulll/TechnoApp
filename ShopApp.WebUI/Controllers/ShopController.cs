@@ -21,11 +21,14 @@ namespace ShopApp.WebUI.Controllers
             if(id==null) {
                 return NotFound();
             }   
-            Product product=_productService.GetById((int)id);
+            Product product=_productService.GetProductDetails((int)id);
             if(product==null){
                 return NotFound();
             }
-            return View(product);
+            return View(new ProductDetailsModel(){
+                Product=product,
+                Categories=product.ProductCategories.Select(i=>i.Category).ToList()
+            });
         }
         public IActionResult List(){
             return View(new ProductListModel(){

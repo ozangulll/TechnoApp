@@ -88,7 +88,7 @@ namespace ShopApp.DataAccess.Migrations
                         .IsRequired();
 
                     b.HasOne("ShopApp.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductCategories")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -99,6 +99,11 @@ namespace ShopApp.DataAccess.Migrations
                 });
 
             modelBuilder.Entity("ShopApp.Entities.Category", b =>
+                {
+                    b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("ShopApp.Entities.Product", b =>
                 {
                     b.Navigation("ProductCategories");
                 });

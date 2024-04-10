@@ -11,8 +11,8 @@ using ShopApp.DataAccess.Concrete.EFCore;
 namespace ShopApp.DataAccess.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20240409125719_SecondCreate")]
-    partial class SecondCreate
+    [Migration("20240410090704_DatabaseMigration")]
+    partial class DatabaseMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -91,7 +91,7 @@ namespace ShopApp.DataAccess.Migrations
                         .IsRequired();
 
                     b.HasOne("ShopApp.Entities.Product", "Product")
-                        .WithMany()
+                        .WithMany("ProductCategories")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -102,6 +102,11 @@ namespace ShopApp.DataAccess.Migrations
                 });
 
             modelBuilder.Entity("ShopApp.Entities.Category", b =>
+                {
+                    b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("ShopApp.Entities.Product", b =>
                 {
                     b.Navigation("ProductCategories");
                 });

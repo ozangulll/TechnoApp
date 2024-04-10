@@ -1,19 +1,22 @@
-@model Product
+@model ProductDetailsModel
 
 <div class="row">
 
     <div class="col-md-3">
-      <img src="~/img/@(Model.ImageUrl ?? "default-image.png")" alt="@Model.Name" class="img-fluid"/>
+      <img src="~/img/@(Model.Product.ImageUrl ?? "default-image.png")" alt="@Model.Product.Name" class="img-fluid"/>
 
     </div>
     <div class="col-md-9">
         <h1 class="mb-3">
-            @Model.Name
+            @Model.Product.Name
         </h1>
+        @foreach(var item in Model.Categories){
+             <a href="#"class="btn btn-link p-0 mb-3">@item.Name</a>
+        }
         <hr/>
-        <a href="#"class="btn btn-link p-0 mb-3">Telefon</a>
+       
         <div class="mb-3">
-            <h4 class="text-primary mb-3">@Model.Price TL
+            <h4 class="text-primary mb-3">@Model.Product.Price TL
 
             </h4>
             <button type="submit" class="btn btn-primary btn-lg"> Add To Cart </button>
@@ -23,7 +26,7 @@
 <div class="row">
     <div class="col-md-12">
         <p class="p-3">
-        
+        @Html.Raw(Model.Product.Description)
         </p>
     </div>
 </div>
