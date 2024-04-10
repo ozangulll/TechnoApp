@@ -12,5 +12,6 @@ namespace ShopApp.DataAccess.Abstract
         //zaten fix olan methodları biz repositoryden alıcaz fakat üstüne burada mesela producta özel olan methodları ekleyebileceğiz.
 
         IEnumerable<Product> GetPopularProducts();
+        Product GetProductDetails(int id);
     }
 }
