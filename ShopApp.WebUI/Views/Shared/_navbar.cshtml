@@ -1,43 +1,48 @@
 ﻿<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">Shopping</a>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link active">Home</a>
-            </li>
-            <li class="nav-item">
-                <a  asp-controller="Shop" asp-action="List" class="nav-link">Products</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Cart</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Orders</a>
-            </li>
-            <li class="nav-item">
-                <a asp-controller="Admin" asp-action="CreateProduct" class="nav-link">Add Product</a>
-            </li>
-            <li class="nav-item">
-                <a asp-controller="Admin" asp-action="Index" class="nav-link">Admin Products</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Add Category</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Admin Categories</a>
-            </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item @(ViewContext.RouteData.Values["controller"] as string == "Home" && ViewContext.RouteData.Values["action"] as string == "Index" ? "active" : "")">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item @(ViewContext.RouteData.Values["controller"] as string == "Shop" && ViewContext.RouteData.Values["action"] as string == "List" ? "active" : "")">
+                    <a asp-controller="Shop" asp-action="List" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Orders</a>
+                </li>
+                <li class="nav-item @(ViewContext.RouteData.Values["controller"] as string == "Admin" && ViewContext.RouteData.Values["action"] as string == "CreateProduct" ? "active" : "")">
+                    <a asp-controller="Admin" asp-action="CreateProduct" class="nav-link">Add Product</a>
+                </li>
+                <li class="nav-item @(ViewContext.RouteData.Values["controller"] as string == "Admin" && ViewContext.RouteData.Values["action"] as string == "Index" ? "active" : "")">
+                    <a asp-controller="Admin" asp-action="Index" class="nav-link">Admin Product</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Add Category</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Admin Categories</a>
+                </li>
+            </ul>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link">Logout</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Register</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Register</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>

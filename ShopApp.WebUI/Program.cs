@@ -28,15 +28,32 @@ app.CustomStaticFiles();
 
 app.UseRouting();
 
-app.UseEndpoints(endpoints =>
+ app.UseEndpoints(endpoints =>
 {
+    endpoints.MapControllerRoute(
+        name: "adminProducts",
+        pattern: "admin/products",
+        defaults: new { controller = "Admin", action = "Index" }
+    );
+
+    endpoints.MapControllerRoute(
+        name: "adminEditProduct",
+        pattern: "admin/products/{id?}",
+        defaults: new { controller = "Admin", action = "Edit" }
+    );
+
     endpoints.MapControllerRoute(
         name: "products",
         pattern: "products/{category?}",
-        defaults: new { controller = "Shop", action = "List" });
+        defaults: new { controller = "Shop", action = "List" }
+    );
 
-    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
 });
+
 
 app.Run();
 
