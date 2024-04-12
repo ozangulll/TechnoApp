@@ -35,12 +35,14 @@ namespace ShopApp.DataAccess.Concrete.MySQL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Product> GetPopularProducts()
+     
+
+        public Product GetProductDetails(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Product GetProductDetails(int id)
+        public List<Product> GetProductsByCategory(string Category)
         {
             throw new NotImplementedException();
         }

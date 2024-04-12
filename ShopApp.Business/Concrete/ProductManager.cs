@@ -38,10 +38,7 @@ namespace ShopApp.Business.Concrete
             return _ProductDAL.GetById(id);
         }
 
-        public List<Product> GetPopularProduct()
-        {
-            return _ProductDAL.GetAll().ToList();
-        }
+    
 
         public Product GetProductDetails(int id)
         {
@@ -51,6 +48,11 @@ namespace ShopApp.Business.Concrete
         public void Update(Product entity)
         {
             _ProductDAL.Update(entity);
+        }
+
+        public List<Product> GetProductByCategory(string category)
+        {
+           return _ProductDAL.GetProductsByCategory(category);
         }
     }
 }

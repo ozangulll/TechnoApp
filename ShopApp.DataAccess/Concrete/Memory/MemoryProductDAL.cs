@@ -10,6 +10,10 @@ namespace ShopApp.DataAccess.Concrete.Memory
 {
     public class MemoryProductDAL : IProductDAL
     {
+        public MemoryProductDAL()
+        {
+        }
+
         public void Create(Product entity)
         {
             throw new NotImplementedException();
@@ -48,6 +52,11 @@ namespace ShopApp.DataAccess.Concrete.Memory
         }
 
         public Product GetProductDetails(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Product> GetProductsByCategory(string Category)
         {
             throw new NotImplementedException();
         }

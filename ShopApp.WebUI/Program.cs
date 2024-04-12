@@ -1,24 +1,18 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using ShopApp.Business.Abstract;
 using ShopApp.Business.Concrete;
 using ShopApp.DataAccess.Abstract;
 using ShopApp.DataAccess.Concrete.EfCore;
 using ShopApp.DataAccess.Concrete.EFCore;
-using ShopApp.DataAccess.Concrete.Memory;
 using ShopApp.WebUI.Middlewares;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Services configuration
 builder.Services.AddScoped<IProductDAL, EFCoreProductDAL>();
-builder.Services.AddScoped<IProductService,ProductManager>();
-builder.Services.AddScoped<ICategoryDAL,EFCoreCategoryDAL>();
+builder.Services.AddScoped<IProductService, ProductManager>();
+builder.Services.AddScoped<ICategoryDAL, EFCoreCategoryDAL>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
-builder.Services.AddMvc();
+builder.Services.AddControllersWithViews(); // Changed from AddMvc()
 
 var app = builder.Build();
 
@@ -26,11 +20,23 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
-      SeedDatabase.Seed();
+    SeedDatabase.Seed();
 }
+
 app.UseStaticFiles();
 app.CustomStaticFiles();
-app.MapDefaultControllerRoute();
-//app.MapGet("/", () => "Hello World!");
+
+app.UseRouting();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "products",
+        pattern: "products/{category?}",
+        defaults: new { controller = "Shop", action = "List" });
+
+    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+});
 
 app.Run();
+
