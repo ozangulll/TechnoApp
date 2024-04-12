@@ -23,7 +23,7 @@ namespace ShopApp.DataAccess.Concrete.EFCore
            }
         }
 
-        public List<Product> GetProductsByCategory(string Category)
+        public List<Product> GetProductsByCategory(string Category,int page,int pageSize)
         {
            using (var context=new ShopContext()){
             var products=context.Products.AsQueryable();
@@ -32,7 +32,8 @@ namespace ShopApp.DataAccess.Concrete.EFCore
                 ThenInclude(i=>i.Category).
                 Where(i=>i.ProductCategories.Any(a=>a.Category.Name.ToLower()==Category.ToLower()));
             }
-            return products.ToList();
+            return products.Skip((page-1)*pageSize).Take(pageSize).ToList();
+           
            }
         }
 

@@ -11,7 +11,7 @@ namespace ShopApp.DataAccess.Abstract
     {
         //zaten fix olan methodları biz repositoryden alıcaz fakat üstüne burada mesela producta özel olan methodları ekleyebileceğiz.
 
-        List<Product> GetProductsByCategory(string Category);
+        List<Product> GetProductsByCategory(string Category,int page,int pageSize);
         Product GetProductDetails(int id);
 
     }

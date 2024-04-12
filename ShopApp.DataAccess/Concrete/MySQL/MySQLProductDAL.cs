@@ -42,7 +42,7 @@ namespace ShopApp.DataAccess.Concrete.MySQL
             throw new NotImplementedException();
         }
 
-        public List<Product> GetProductsByCategory(string Category)
+        public List<Product> GetProductsByCategory(string Category,int page,int pageSize)
         {
             throw new NotImplementedException();
         }

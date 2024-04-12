@@ -50,9 +50,9 @@ namespace ShopApp.Business.Concrete
             _ProductDAL.Update(entity);
         }
 
-        public List<Product> GetProductByCategory(string category)
+        public List<Product> GetProductByCategory(string category,int page,int pageSize)
         {
-           return _ProductDAL.GetProductsByCategory(category);
+           return _ProductDAL.GetProductsByCategory(category,page,pageSize);
         }
     }
 }
