@@ -1,0 +1,77 @@
+@model ProductListModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    /* Tablo stilleri */
+    .product-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .product-table th, .product-table td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    /* Düzenlenebilir hücreler */
+    .editable-cell:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Düzenle ve Sil düğmeleri */
+    .edit-btn, .delete-btn {
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .edit-btn:hover, .delete-btn:hover {
+        background-color: #f0ad4e;
+        color: #fff;
+    }
+</style>
+
+<h1>Admin Products</h1>
+<hr />
+
+@if (Model.Products.Count() > 0)
+{
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th style="width:30px;">Id</th>
+                <th style="width:100px;">Image</th>
+                <th>Name</th>
+                <th style="width:100px;">Price</th>
+                <th style="width:150px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Products)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>
+                        <img src="~/img/@item.ImageUrl" width="80" />
+                    </td>
+                    <td class="editable-cell">@item.Name</td>
+                    <td class="editable-cell">@item.Price</td>
+                    <td>
+                        <button class="edit-btn btn btn-primary btn-sm mr-2" data-id="/admin/products/@item.Id">Edit</button>
+                        <button class="delete-btn btn btn-danger btn-sm" data-id="@item.Id">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">
+        <h4>No Products</h4>
+    </div>
+}

@@ -1,0 +1,36 @@
+@model ProductModel
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+
+<h1 class="fade-in form-title">Create Product</h1>
+<hr class="fade-in" />
+
+<div class="row fade-in">
+    <div class="col-md-8">
+
+        <form asp-controller="Admin" asp-action="CreateProduct" method="post">
+            <div class="form-group">
+                <label asp-for="Name">Product Name</label>
+                <input asp-for="Name" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl">Image URL</label>
+                <input asp-for="ImageUrl" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <textarea id="editor" asp-for="Description" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price">Price</label>
+                <input asp-for="Price" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Product</button>
+            </div>
+        </form>
+
+    </div>
+</div>
