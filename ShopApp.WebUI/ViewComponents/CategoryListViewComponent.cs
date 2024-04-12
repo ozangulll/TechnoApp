@@ -19,6 +19,7 @@ namespace ShopApp.WebUI.ViewComponents
 
         public IViewComponentResult Invoke(){
            return View(new CategoryListViewModel(){
+            SelectedCategory=RouteData.Values["category"]?.ToString(),
             Categories=_categoryService.GetAll()
            });
         }
