@@ -13,14 +13,18 @@ namespace ShopApp.WebUI.Controllers
     public class AdminController : Controller
     {
         private IProductService _productService;
+        private ICategoryService _categoryService;
 
-        public AdminController(IProductService productService)
+
+
+        public AdminController(IProductService productService,ICategoryService categoryService)
         {
             _productService = productService;
+             _categoryService = categoryService;
         }
 
 
-        public IActionResult Index()
+        public IActionResult ProductList()
         {
        
             return View(new ProductListModel(){
@@ -42,7 +46,7 @@ namespace ShopApp.WebUI.Controllers
             _productService.Create(entity);
             return RedirectToAction("Index");
         }
-        public IActionResult Edit(int id){
+        public IActionResult EditProduct(int id){
             if(id==null){
                 return NotFound();
             }
@@ -60,7 +64,7 @@ namespace ShopApp.WebUI.Controllers
             return View(model);
         }
         [HttpPost]
-        public IActionResult Edit(ProductModel productModel){
+        public IActionResult EditProduct(ProductModel productModel){
             var entity=_productService.GetById(productModel.Id);
             if(entity==null){return NotFound();}
             entity.Name=productModel.Name;
@@ -71,12 +75,17 @@ namespace ShopApp.WebUI.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public IActionResult Delete(int productId){
+        public IActionResult DeleteProduct(int productId){
             var entity=_productService.GetById(productId);
             if(entity!=null){
                 _productService.Delete(entity);
             }
             return RedirectToAction("Index");
+        }
+        public IActionResult CategoryList(){
+            return View( new CategoryListModel(){
+                Categories=_categoryService.GetAll()
+            });
         }
     }
 }
