@@ -54,5 +54,10 @@ namespace ShopApp.Business.Concrete
         {
            return _ProductDAL.GetProductsByCategory(category,page,pageSize);
         }
+
+        public int GetCountByCategory(string category)
+        {
+           return _ProductDAL.GetCountByCategory(category);
+        }
     }
 }

@@ -13,6 +13,6 @@ namespace ShopApp.DataAccess.Abstract
 
         List<Product> GetProductsByCategory(string Category,int page,int pageSize);
         Product GetProductDetails(int id);
-
+        int GetCountByCategory(string category);
     }
 }
