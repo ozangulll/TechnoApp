@@ -1,7 +1,6 @@
 ﻿@model Product
-
 <div class="col-md-4">
-    <div class="card mb-3">
+    <div class="card mb-3" onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
         <img src="~/img/@Model.ImageUrl" alt="@Model.Name" />
         <div class="card-body">
             <h4 class="card-title">
@@ -16,4 +15,16 @@
             <a href="#" class="btn btn-outline-primary btn-sm ml-3">Add To Cart</a>
         </div>
     </div>
-</div> 
+</div>
+
+<script>
+    function expandCard(card) {
+        card.style.transform = "scale(1.1)";
+        card.style.transition = "transform 0.5s";
+    }
+
+    function shrinkCard(card) {
+        card.style.transform = "scale(1)";
+        card.style.transition = "transform 0.5s";
+    }
+</script>

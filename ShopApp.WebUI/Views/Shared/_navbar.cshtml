@@ -1,4 +1,4 @@
-﻿<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-dark bg-primary fixed-top">
+﻿<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-dark bg-primary fixed-top" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="/">Shopping</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,3 +46,15 @@
         </div>
     </div>
 </nav>
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("navbar").style.top = "0";
+    } else {
+        document.getElementById("navbar").style.top = "-100px"; /* Navbar'ı gizlemek için yukarı kaydırın */
+    }
+    prevScrollpos = currentScrollPos;
+}
+</script>
