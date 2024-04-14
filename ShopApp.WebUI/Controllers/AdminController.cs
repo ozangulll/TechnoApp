@@ -44,7 +44,7 @@ namespace ShopApp.WebUI.Controllers
                 ImageUrl=productModel.ImageUrl
             };
             _productService.Create(entity);
-            return RedirectToAction("Index");
+            return RedirectToAction("ProductList");
         }
         public IActionResult EditProduct(int id){
             if(id==null){
@@ -72,7 +72,7 @@ namespace ShopApp.WebUI.Controllers
             entity.Description=productModel.Description;
             entity.ImageUrl=productModel.ImageUrl;
             _productService.Update(entity);
-            return RedirectToAction("Index");
+            return RedirectToAction("ProductList");
         }
         [HttpPost]
         public IActionResult DeleteProduct(int productId){
@@ -80,7 +80,7 @@ namespace ShopApp.WebUI.Controllers
             if(entity!=null){
                 _productService.Delete(entity);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("ProductList");
         }
         public IActionResult CategoryList(){
             return View( new CategoryListModel(){
