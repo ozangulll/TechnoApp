@@ -1,7 +1,9 @@
 ﻿@model Product
 <div class="col-md-4">
     <div class="card mb-3" onmouseover="expandCard(this)" onmouseout="shrinkCard(this)">
-        <img src="~/img/@Model.ImageUrl" alt="@Model.Name" />
+        <div class="image-container">
+            <img class="card-image" src="~/img/@Model.ImageUrl" alt="@Model.Name" />
+        </div>
         <div class="card-body">
             <h4 class="card-title">
                 <a href="#">@Model.Name</a>
@@ -11,20 +13,63 @@
             </small>
         </div>
         <div class="card-footer text-center">
+            <div class="description" style="display: none;">@Model.Description</div>
             <a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-outline-primary btn-sm">Details</a>
-            <a href="#" class="btn btn-outline-primary btn-sm ml-3">Add To Cart</a>
+            <a href="#" class="btn btn-outline-primary btn-sm ml-3" onclick="toggleDescription(this)">Add To Cart</a>
         </div>
     </div>
 </div>
 
+
 <script>
     function expandCard(card) {
+        card.querySelector('.description').style.display = "block";
         card.style.transform = "scale(1.1)";
-        card.style.transition = "transform 0.5s";
+        card.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.5)";
+        card.style.height = "auto";
+        card.style.transition = "transform 0.5s, height 0.5s, box-shadow 0.5s";
     }
 
     function shrinkCard(card) {
+        card.querySelector('.description').style.display = "none";
         card.style.transform = "scale(1)";
-        card.style.transition = "transform 0.5s";
+        card.style.boxShadow = "none";
+        card.style.height = "auto";
+        card.style.transition = "transform 0.5s, height 0.5s, box-shadow 0.5s";
+    }
+
+    function toggleDescription(button) {
+        var cardFooter = button.parentNode;
+        var description = cardFooter.querySelector('.description');
+        if (description.style.display === "none") {
+            description.style.display = "block";
+        } else {
+            description.style.display = "none";
+        }
     }
 </script>
+<style>
+.card {
+    overflow: hidden;
+}
+
+.image-container {
+    max-width: 100%;
+    max-height: 400px; /* İstenilen yüksekliği ayarlayın */
+    overflow: hidden;
+}
+
+.card-image {
+    
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover .card-image {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+</style>
