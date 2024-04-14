@@ -9,65 +9,65 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ShopApp.WebUI
 build_property.RootNamespace = ShopApp.WebUI
-build_property.ProjectDir = C:\Users\Acer\Desktop\eCommerce\shopapp.webui\
+build_property.ProjectDir = C:\Users\Acer\Desktop\TechnoApp\eCommerce-ShopApp\shopapp.webui\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Acer\Desktop\eCommerce\shopapp.webui
+build_property.MSBuildProjectDirectory = C:\Users\Acer\Desktop\TechnoApp\eCommerce-ShopApp\shopapp.webui
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Admin/CategoryList.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Admin/CategoryList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Admin/CreateProduct.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Admin/CreateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Admin/EditProduct.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Admin/EditProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Admin/ProductList.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Admin/ProductList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Home/Index.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Shared/Components/CategoryList/Default.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Shared/Components/CategoryList/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlMaXN0XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Shared/_Layout.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Shared/_navbar.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Shared/_navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9uYXZiYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Shared/_product.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Shared/_product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9wcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Shared/_slider.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Shared/_slider.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9zbGlkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Shop/Details.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Shop/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/Shop/List.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/Shop/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/_ViewImports.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Acer/Desktop/eCommerce/shopapp.webui/Views/_ViewStart.cshtml]
+[C:/Users/Acer/Desktop/TechnoApp/eCommerce-ShopApp/shopapp.webui/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eSIzms9LmwFku8LNEJpqEOB2jrV5wm56z732OWNvbIE=",
+  "Hash": "I6uELt5KpnFIslbBGjBRiqeiqyRa3nuRT1OQZldrnAI=",
   "Source": "ShopApp.WebUI",
   "BasePath": "_content/ShopApp.WebUI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "ShopApp.WebUI\\wwwroot",
       "Source": "ShopApp.WebUI",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\css\\style.css",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\css\\style.css",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\1.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\1.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/1.jpg",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\img\\1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\2.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\2.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/2.jpg",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\img\\2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\3.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\3.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/3.jpg",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\img\\3.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\4.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\4.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/4.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\img\\4.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\5.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\5.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/5.jpg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\img\\5.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\6.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\6.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/6.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\img\\6.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\7.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\7.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/7.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\img\\7.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\ip1.png",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\ip1.png",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/ip1.png",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\img\\ip1.png"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\s21.jpg",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\s21.jpg",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/s21.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\img\\s21.jpg"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\s21.png",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\s21.png",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/s21.png",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\img\\s21.png"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\slider1.png",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\slider1.png",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/slider1.png",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\img\\slider1.png"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\slider2.png",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\slider2.png",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/slider2.png",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\img\\slider2.png"
     },
     {
-      "Identity": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\wwwroot\\img\\slider3.png",
+      "Identity": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\img\\slider3.png",
       "SourceId": "ShopApp.WebUI",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.WebUI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\wwwroot\\",
       "BasePath": "_content/ShopApp.WebUI",
       "RelativePath": "img/slider3.png",
       "AssetKind": "All",

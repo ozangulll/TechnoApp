@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj": {}
+    "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\ShopApp.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Business\\ShopApp.Business.csproj": {
+    "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Business\\ShopApp.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
         "projectName": "ShopApp.Business",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Business\\ShopApp.Business.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Business\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
+              "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
               },
-              "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj"
+              "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+    "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
         "projectName": "ShopApp.DataAccess",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,8 +90,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj"
+              "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
               }
             }
           }
@@ -141,14 +141,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+    "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
         "projectName": "ShopApp.Entities",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -196,14 +196,14 @@
         }
       }
     },
-    "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj": {
+    "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\ShopApp.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\ShopApp.WebUI.csproj",
         "projectName": "ShopApp.WebUI",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\ShopApp.WebUI.csproj",
+        "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\ShopApp.WebUI.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\shopapp.webui\\obj\\",
+        "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\shopapp.webui\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -220,14 +220,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Business\\ShopApp.Business.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Business\\ShopApp.Business.csproj"
+              "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj"
               },
-              "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
+              "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
               },
-              "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj": {
-                "projectPath": "C:\\Users\\Acer\\Desktop\\eCommerce\\ShopApp.Entities\\ShopApp.Entities.csproj"
+              "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+                "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
               }
             }
           }
