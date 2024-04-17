@@ -106,7 +106,8 @@ namespace ShopApp.WebUI.Controllers
 
             return View(new CategoryModel(){
                 Id=entity.Id,
-                Name=entity.Name
+                Name=entity.Name,
+                Products=entity.ProductCategories.Select(p=>p.Product).ToList(),
             });
         }
         [HttpPost]
@@ -125,6 +126,11 @@ namespace ShopApp.WebUI.Controllers
             }
 
             return RedirectToAction("CategoryList");
+        }
+        [HttpPost]
+        public IActionResult DeleteFromCategory(int categoryId,int productId){
+                _categoryService.DeleteFromCategory(categoryId,productId);
+                return Redirect("/admin/editcategory/"+categoryId);
         }
         
     }

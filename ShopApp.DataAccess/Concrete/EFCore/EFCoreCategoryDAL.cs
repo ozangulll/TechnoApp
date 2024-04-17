@@ -11,6 +11,14 @@ namespace ShopApp.DataAccess.Concrete.EFCore
 {
     public class EFCoreCategoryDAL : EFCoreGenericRepository<Category, ShopContext>, ICategoryDAL
     {
+        public void DeleteFromCategory(int categoryId, int productId)
+        {
+            using(var context=new ShopContext()){
+                    var cmd=@"delete from ProductCategory where ProductId=@p0 and CategoryId=@p1";
+                    context.Database.ExecuteSqlRaw(cmd,productId,categoryId);
+            }
+        }
+
         public Category GetByIdWithProducts(int id)
         {
             using(var context=new ShopContext()){

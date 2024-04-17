@@ -26,6 +26,11 @@ public CategoryManager(ICategoryDAL categoryDAL)
             _categoryDAL.Delete(entity);
         }
 
+        public void DeleteFromCategory(int categoryId, int productId)
+        {
+            _categoryDAL.DeleteFromCategory(categoryId,productId);
+        }
+
         public List<Category> GetAll()
         {
             return _categoryDAL.GetAll();
