@@ -6,11 +6,12 @@
 
 <h1 class="fade-in form-title">Edit Product</h1>
 <hr class="fade-in" />
-
+ <form asp-controller="Admin" asp-action="EditProduct" method="post">
 <div class="row fade-in">
     <div class="col-md-8">
 
-        <form asp-controller="Admin" asp-action="EditProduct" method="post">
+
+       
             <input type="hidden" name="Id" value="@Model.Id"/>
             <div class="form-group">
                 <label asp-for="Name">Product Name</label>
@@ -18,6 +19,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="ImageUrl">Image URL</label>
+    using Microsoft.EntityFrameworkCore.Metadata.Internal;
                 <input asp-for="ImageUrl" value="@Model.ImageUrl" class="form-control" />
             </div>
             <div class="form-group">
@@ -31,7 +33,18 @@
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Save Product</button>
             </div>
-        </form>
+        
 
-    </div>
+    
 </div>
+<div class="col-md-4">
+    @foreach(var item in (List<Category>)ViewBag.Categories){
+        <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="category@(item.Id)" @(Model.SelectedCategories.Any(i=>i.Id==item.Id)?"checked":"")>
+  <label class="custom-control-label" for="category@(item.Id)">@item.Name</label>
+</div>
+
+        }
+</div>
+</div>
+</form>

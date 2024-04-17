@@ -46,11 +46,11 @@ namespace ShopApp.WebUI.Controllers
             _productService.Create(entity);
             return RedirectToAction("ProductList");
         }
-        public IActionResult EditProduct(int id){
+        public IActionResult EditProduct(int? id){
             if(id==null){
                 return NotFound();
             }
-            var entity=_productService.GetById((int)id);
+            var entity=_productService.GetByIdWithCategories((int)id);
             if(entity==null){
                 return NotFound();
             }
@@ -59,8 +59,10 @@ namespace ShopApp.WebUI.Controllers
                 Name=entity.Name,
                 Price=entity.Price,
                 Description=entity.Description,
-                ImageUrl=entity.ImageUrl
+                ImageUrl=entity.ImageUrl,
+                SelectedCategories=entity.ProductCategories.Select(i=>i.Category).ToList()
             };
+            ViewBag.Categories=_categoryService.GetAll();
             return View(model);
         }
         [HttpPost]
@@ -132,6 +134,7 @@ namespace ShopApp.WebUI.Controllers
                 _categoryService.DeleteFromCategory(categoryId,productId);
                 return Redirect("/admin/editcategory/"+categoryId);
         }
+
         
     }
 }

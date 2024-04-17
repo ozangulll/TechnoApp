@@ -11,6 +11,13 @@ namespace ShopApp.DataAccess.Concrete.EFCore
 {
     public class EFCoreProductDAL : EFCoreGenericRepository<Product, ShopContext>, IProductDAL
     {
+        public Product GetByIdWithCategories(int id)
+        {
+           using (var context=new ShopContext()){
+            return context.Products.Where(i=>i.Id==id).Include(i=>i.ProductCategories).ThenInclude(i=>i.Category).FirstOrDefault();
+           }
+        }
+
         public int GetCountByCategory(string category)
         {
             using (var context=new ShopContext()){
