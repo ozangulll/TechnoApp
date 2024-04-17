@@ -37,7 +37,8 @@ namespace ShopApp.WebUI.Controllers
         }
         [HttpPost]
         public IActionResult CreateProduct(ProductModel productModel){
-            var entity=new Product(){
+              if(ModelState.IsValid==true){
+                var entity=new Product(){
                 Name=productModel.Name,
                 Price=productModel.Price,
                 Description=productModel.Description,
@@ -45,6 +46,9 @@ namespace ShopApp.WebUI.Controllers
             };
             _productService.Create(entity);
             return RedirectToAction("ProductList");
+            }
+            return View(productModel);
+            
         }
         public IActionResult EditProduct(int? id){
             if(id==null){
