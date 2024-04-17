@@ -22,7 +22,7 @@ public string? ImageUrl { get; set; }
 public string Description { get; set; }
 
 [Required(ErrorMessage = "The Price field is required.")]
-public decimal Price { get; set; }
+public decimal? Price { get; set; }
 
 public List<ProductCategory> ProductCategories { get; set; }
 public List<Category> SelectedCategories { get; set; }

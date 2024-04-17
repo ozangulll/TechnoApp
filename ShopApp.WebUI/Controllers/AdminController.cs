@@ -33,7 +33,7 @@ namespace ShopApp.WebUI.Controllers
         }
         [HttpGet]
         public IActionResult CreateProduct(){
-            return View();
+            return View(new ProductModel());
         }
         [HttpPost]
         public IActionResult CreateProduct(ProductModel productModel){
@@ -61,7 +61,7 @@ namespace ShopApp.WebUI.Controllers
            var model=new ProductModel(){
                 Id=entity.Id,
                 Name=entity.Name,
-                Price=entity.Price,
+                Price= entity.Price,
                 Description=entity.Description,
                 ImageUrl=entity.ImageUrl,
                 SelectedCategories=entity.ProductCategories.Select(i=>i.Category).ToList()
