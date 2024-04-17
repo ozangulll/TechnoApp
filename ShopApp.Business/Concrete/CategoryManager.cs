@@ -36,6 +36,11 @@ public CategoryManager(ICategoryDAL categoryDAL)
             return _categoryDAL.GetById(id);
         }
 
+        public Category GetByIdWithProducts(int id)
+        {
+            return _categoryDAL.GetByIdWithProducts(id);
+        }
+
         public void Update(Category entity)
         {
             _categoryDAL.Update(entity);
