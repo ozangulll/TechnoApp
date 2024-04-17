@@ -66,14 +66,14 @@ namespace ShopApp.WebUI.Controllers
             return View(model);
         }
         [HttpPost]
-        public IActionResult EditProduct(ProductModel productModel){
+        public IActionResult EditProduct(ProductModel productModel,int[] categoryIds){
             var entity=_productService.GetById(productModel.Id);
             if(entity==null){return NotFound();}
             entity.Name=productModel.Name;
             entity.Price=productModel.Price;
             entity.Description=productModel.Description;
             entity.ImageUrl=productModel.ImageUrl;
-            _productService.Update(entity);
+            _productService.Update(entity,categoryIds);
             return RedirectToAction("ProductList");
         }
         [HttpPost]

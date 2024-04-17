@@ -61,5 +61,10 @@ namespace ShopApp.DataAccess.Concrete.MySQL
         {
             throw new NotImplementedException();
         }
+
+        public void Update(Product entity, int[] categoryIds)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

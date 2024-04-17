@@ -64,5 +64,10 @@ namespace ShopApp.Business.Concrete
         {
             return _ProductDAL.GetByIdWithCategories(id);
         }
+
+        public void Update(Product entity, int[] categoryIds)
+        {
+            _ProductDAL.Update(entity,categoryIds);
+        }
     }
 }
