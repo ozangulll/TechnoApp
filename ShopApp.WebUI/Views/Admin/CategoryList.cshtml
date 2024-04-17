@@ -51,9 +51,9 @@
                     <td>@item.Id</td>
                     <td class="editable-cell">@item.Name</td>
                     <td>
-                         <a class="edit-btn btn btn-primary btn-sm mr-2" href="/admin/products/@item.Id">Edit</a>
-                         <form action="/admin/deleteproduct" method="post" style="display: inline;">
-                         <input type="hidden" name="productId" value="@item.Id"/>
+                         <a class="edit-btn btn btn-primary btn-sm mr-2" href="/admin/EditCategory/@item.Id">Edit</a>
+                         <form action="/admin/deletecategory" method="post" style="display: inline;">
+                         <input type="hidden" name="categoryId" value="@item.Id"/>
                        <button type="submit" class="delete-btn btn btn-danger btn-sm mr-2">Delete</button> 
                          </form>
                          

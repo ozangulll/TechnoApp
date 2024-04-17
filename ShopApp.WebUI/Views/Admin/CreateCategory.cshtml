@@ -1,0 +1,22 @@
+@model CategoryModel
+
+
+
+<h1 class="fade-in form-title">Create Category</h1>
+<hr class="fade-in" />
+
+<div class="row fade-in">
+    <div class="col-md-8">
+
+        <form asp-controller="Admin" asp-action="CreateCategory" method="post">
+            <div class="form-group">
+                <label asp-for="Name">Category Name</label>
+                <input asp-for="Name" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Category</button>
+            </div>
+        </form>
+
+    </div>
+</div>

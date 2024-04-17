@@ -18,12 +18,12 @@ public CategoryManager(ICategoryDAL categoryDAL)
 
         public void Create(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryDAL.Create(entity);
         }
 
         public void Delete(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryDAL.Delete(entity);
         }
 
         public List<Category> GetAll()
@@ -33,12 +33,12 @@ public CategoryManager(ICategoryDAL categoryDAL)
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryDAL.GetById(id);
         }
 
         public void Update(Category entity)
         {
-            throw new NotImplementedException();
+            _categoryDAL.Update(entity);
         }
     }
 }
