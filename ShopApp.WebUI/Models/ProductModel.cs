@@ -12,10 +12,8 @@ namespace ShopApp.WebUI.Models
     public int Id { get; set; }
 
 [Required(ErrorMessage = "The Name field is required.")]
-[StringLength(64, MinimumLength = 10, ErrorMessage = "The Name must be between 10 and 64 characters long.")]
+[StringLength(64, MinimumLength = 5, ErrorMessage = "The Name must be between 10 and 64 characters long.")]
 public string? Name { get; set; }
-
-[Required(ErrorMessage = "The ImageUrl field is required.")]
 public string? ImageUrl { get; set; }   
 
 [Required(ErrorMessage = "The Description field is required.")]

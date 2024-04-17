@@ -35,50 +35,106 @@ namespace ShopApp.WebUI.Controllers
         public IActionResult CreateProduct(){
             return View(new ProductModel());
         }
-        [HttpPost]
-        public IActionResult CreateProduct(ProductModel productModel){
-              if(ModelState.IsValid==true){
-                var entity=new Product(){
-                Name=productModel.Name,
-                Price=productModel.Price,
-                Description=productModel.Description,
-                ImageUrl=productModel.ImageUrl
-            };
-            _productService.Create(entity);
-            return RedirectToAction("ProductList");
+      public async Task<IActionResult> CreateProduct(ProductModel model, IFormFile file)
+{
+    if (ModelState.IsValid)
+    {
+        try
+        {
+            if (file != null && file.Length > 0)
+            {
+                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", fileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+
+                var entity = new Product
+                {
+                    Name = model.Name,
+                    Description = model.Description,
+                    ImageUrl = fileName,
+                    Price = model.Price
+                };
+
+                _productService.Create(entity);
             }
-            return View(productModel);
-            
+           
         }
-        public IActionResult EditProduct(int? id){
-            if(id==null){
+        catch (Exception ex)
+        {
+            // Log the exception
+            ModelState.AddModelError("", "An error occurred while processing your request.");
+        }
+    }
+
+    return View(model); 
+}
+
+       public IActionResult EditProduct(int? id)
+        {
+            if (id == null)
+            {
                 return NotFound();
             }
-            var entity=_productService.GetByIdWithCategories((int)id);
-            if(entity==null){
+            var entity = _productService.GetByIdWithCategories((int)id);
+
+            if (entity == null)
+            {
                 return NotFound();
             }
-           var model=new ProductModel(){
-                Id=entity.Id,
-                Name=entity.Name,
-                Price= entity.Price,
-                Description=entity.Description,
-                ImageUrl=entity.ImageUrl,
-                SelectedCategories=entity.ProductCategories.Select(i=>i.Category).ToList()
+
+            var model = new ProductModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Price = entity.Price,
+                Description = entity.Description,
+                ImageUrl = entity.ImageUrl,
+                SelectedCategories = entity.ProductCategories.Select(i => i.Category).ToList()
             };
-            ViewBag.Categories=_categoryService.GetAll();
+
+            ViewBag.Categories = _categoryService.GetAll();
+
             return View(model);
         }
         [HttpPost]
-        public IActionResult EditProduct(ProductModel productModel,int[] categoryIds){
-            var entity=_productService.GetById(productModel.Id);
-            if(entity==null){return NotFound();}
-            entity.Name=productModel.Name;
-            entity.Price=productModel.Price;
-            entity.Description=productModel.Description;
-            entity.ImageUrl=productModel.ImageUrl;
-            _productService.Update(entity,categoryIds);
-            return RedirectToAction("ProductList");
+        public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryIds, IFormFile file)
+        {
+            if (ModelState.IsValid)
+            {
+                var entity = _productService.GetById(model.Id);
+
+                if (entity == null)
+                {
+                    return NotFound();
+                }
+
+                entity.Name = model.Name;
+                entity.Description = model.Description;               
+                entity.Price = model.Price;
+
+                if (file!=null)
+                {
+                    entity.ImageUrl = file.FileName;
+
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", file.FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                    }
+                }
+
+                _productService.Update(entity, categoryIds);
+
+                return RedirectToAction("ProductList");
+            }
+
+            ViewBag.Categories = _categoryService.GetAll();
+
+            return View(model);
         }
         [HttpPost]
         public IActionResult DeleteProduct(int productId){
