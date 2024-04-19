@@ -24,6 +24,8 @@ public decimal? Price { get; set; }
 
 public List<ProductCategory> ProductCategories { get; set; }
 public List<Category> SelectedCategories { get; set; }
+public List<Category>?CategoriesForCreateProduct{ get; set; }
+
 
     }
 }

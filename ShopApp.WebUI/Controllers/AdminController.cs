@@ -33,6 +33,10 @@ namespace ShopApp.WebUI.Controllers
         }
         [HttpGet]
         public IActionResult CreateProduct(){
+            var categories=_categoryService.GetAll();
+            var model=new ProductModel(){
+                CategoriesForCreateProduct = categories
+            };
             return View(new ProductModel());
         }
       public async Task<IActionResult> CreateProduct(ProductModel model, IFormFile file)
@@ -56,7 +60,9 @@ namespace ShopApp.WebUI.Controllers
                     Name = model.Name,
                     Description = model.Description,
                     ImageUrl = fileName,
-                    Price = model.Price
+                    Price = model.Price,
+        
+                    
                 };
 
                 _productService.Create(entity);

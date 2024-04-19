@@ -13,5 +13,7 @@ namespace ShopApp.Entities
         public string Description { get; set; }
         public decimal ?Price { get; set; }
         public List<ProductCategory> ProductCategories { get; set; }
+
+        
     }
 }

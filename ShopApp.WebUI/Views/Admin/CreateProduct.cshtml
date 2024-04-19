@@ -3,23 +3,21 @@
     ViewData["Title"] = "CreateProduct";
 }
 
-
 <h1 class="fade-in form-title">Create Product</h1>
 <hr class="fade-in" />
 
 <div class="row fade-in">
     <div class="col-md-8">
-
-        <form asp-controller="Admin" asp-action="CreateProduct" method="post" enctype="multipart/form-data" >
-        <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-controller="Admin" asp-action="CreateProduct" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name">Product Name</label>
-                <input asp-for="Name" value="" class="form-control" />
+                <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ImageUrl">Image</label>
-                <input type="file" name="file" value="" class="form-control-file"/>
+                <input type="file" name="ImageUrl" class="form-control-file" />
                 <span asp-validation-for="ImageUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,13 +27,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="Price">Price</label>
-                <input asp-for="Price" value="" class="form-control" />
+                <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Save Product</button>
+    <label>Categories</label>
+    @if(Model.CategoriesForCreateProduct != null)
+    {
+        foreach (var category in Model.CategoriesForCreateProduct)
+        {
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox"
+                       name="CategoryIds"
+                       value="@category.Id"
+                       class="custom-control-input"
+                       id="category@(category.Id)">
+                <label class="custom-control-label" for="category@(category.Id)">@category.Name</label>
             </div>
-        </form>
+        }
+    }
+</div>
 
+            <button type="submit" class="btn btn-primary">Save Product</button>
+        </form>
     </div>
 </div>
