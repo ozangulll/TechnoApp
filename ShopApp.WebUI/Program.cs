@@ -1,18 +1,26 @@
+
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
+
+using SendGrid.Extensions.DependencyInjection;
 using ShopApp.Business.Abstract;
 using ShopApp.Business.Concrete;
 using ShopApp.DataAccess.Abstract;
 using ShopApp.DataAccess.Concrete.EfCore;
 using ShopApp.DataAccess.Concrete.EFCore;
 using ShopApp.WebUI.Identity;
+
 using ShopApp.WebUI.Middlewares;
+using ShopApp.WebUI.Services;
+using ShopApp.WebUI.SettingsForMail;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 var connectionString = configuration.GetConnectionString("IdentityConnection");
 builder.Services.AddDbContext<AppIdentityDbContext>(options=>options.UseSqlServer(connectionString));
 // Services configuration
+builder.Services.Configure<Settings>(builder.Configuration.GetSection("SendGridSettings"));
 builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
 builder.Services.Configure<IdentityOptions>(options=>{
    options.Password.RequireDigit = true;
@@ -28,7 +36,7 @@ builder.Services.Configure<IdentityOptions>(options=>{
                 // options.User.AllowedUserNameCharacters = "";
                 options.User.RequireUniqueEmail = true;
 
-                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedEmail = true;
                 options.SignIn.RequireConfirmedPhoneNumber = false;
 });
 
@@ -42,7 +50,8 @@ builder.Services.Configure<IdentityOptions>(options=>{
                 options.Cookie = new CookieBuilder
                 {
                      HttpOnly = true,
-                     Name=".ShopApp.Security.Cookie"
+                     Name=".ShopApp.Security.Cookie",
+                     SameSite=SameSiteMode.Strict
                 };
 
             });
@@ -50,9 +59,13 @@ builder.Services.AddScoped<IProductDAL, EFCoreProductDAL>();
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryDAL, EFCoreCategoryDAL>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<IEmailSender,EmailSenderService>();
 
 builder.Services.AddControllersWithViews(); // Changed from AddMvc()
-
+builder.Services.AddSendGrid(options => {
+    options.ApiKey = builder.Configuration.GetSection("SendGridSettings")
+    .GetValue<string>("ApiKey");
+});
 var app = builder.Build();
 
 // HTTP request pipeline configuration

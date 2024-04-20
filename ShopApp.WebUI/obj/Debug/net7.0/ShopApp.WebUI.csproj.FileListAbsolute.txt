@@ -161,3 +161,10 @@ C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0
 C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\obj\Debug\net7.0\ShopApp.WebUI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\SendGrid.dll
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\StarkbankEcdsa.dll
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\SendGrid.Extensions.DependencyInjection.dll
