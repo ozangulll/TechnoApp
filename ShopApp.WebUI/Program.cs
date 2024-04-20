@@ -7,6 +7,7 @@ using ShopApp.DataAccess.Concrete.EfCore;
 using ShopApp.DataAccess.Concrete.EFCore;
 using ShopApp.WebUI.Identity;
 using ShopApp.WebUI.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 var connectionString = configuration.GetConnectionString("IdentityConnection");
@@ -14,28 +15,37 @@ builder.Services.AddDbContext<AppIdentityDbContext>(options=>options.UseSqlServe
 // Services configuration
 builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
 builder.Services.Configure<IdentityOptions>(options=>{
-    options.Password.RequireDigit=true;
-    options.Password.RequireLowercase=true;
-    options.Password.RequiredLength=6;
-    options.Password.RequireNonAlphanumeric=true;
-    options.Lockout.MaxFailedAccessAttempts=5;
-    options.Lockout.DefaultLockoutTimeSpan=TimeSpan.FromMinutes(5);
-    options.User.AllowedUserNameCharacters=""; //we can allow the user characahter which use the user.
-    options.User.RequireUniqueEmail=true;
-    options.SignIn.RequireConfirmedEmail=true;
-    options.SignIn.RequireConfirmedPhoneNumber=false;
+   options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+
+                options.Lockout.MaxFailedAccessAttempts = 5;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+                options.Lockout.AllowedForNewUsers = true;
+
+                // options.User.AllowedUserNameCharacters = "";
+                options.User.RequireUniqueEmail = true;
+
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
 });
-builder.Services.ConfigureApplicationCookie(options=>{
-options.LoginPath="/account/login";
-options.LogoutPath="/account/logout";
-options.AccessDeniedPath="/account/accessdenied";
-options.ExpireTimeSpan=TimeSpan.FromMinutes(60);
-options.SlidingExpiration=true;
-options.Cookie=new CookieBuilder{
-    HttpOnly=true;
-    Name=".TechnoApp.Security.Cookie"
-}
-});
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/account/login";
+                options.LogoutPath = "/account/logout";
+                options.AccessDeniedPath = "/account/accessdenied";
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                options.SlidingExpiration = true;
+                options.Cookie = new CookieBuilder
+                {
+                     HttpOnly = true,
+                     Name=".ShopApp.Security.Cookie"
+                };
+
+            });
 builder.Services.AddScoped<IProductDAL, EFCoreProductDAL>();
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryDAL, EFCoreCategoryDAL>();
@@ -57,6 +67,8 @@ app.CustomStaticFiles();
 
 app.UseRouting();
 app.UseAuthentication();
+app.UseAuthorization();
+
  app.UseEndpoints(endpoints =>
 {
 
