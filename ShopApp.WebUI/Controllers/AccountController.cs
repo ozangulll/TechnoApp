@@ -85,5 +85,10 @@ namespace ShopApp.WebUI.Controllers
             ModelState.AddModelError("", "Username or password incorrect.");
             return View(model);
         }
+        [HttpGet]
+        public  async Task<IActionResult> Logout(){
+            await _signInManager.SignOutAsync();
+            return Redirect("~/");
+        }
     }
 }
