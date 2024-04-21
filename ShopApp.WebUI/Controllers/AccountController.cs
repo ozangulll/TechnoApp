@@ -135,7 +135,58 @@ namespace ShopApp.WebUI.Controllers
             TempData["message"] = "Your account was not confirmed.";
             return View();
         }
+        public IActionResult ForgotPassword(){
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword(string Email){
+            if(string.IsNullOrEmpty(Email)){
+                return View();
+            }
+            var user= await _userManager.FindByEmailAsync(Email);
+            if(user==null){
+                return View();
+            }
+            var token= await _userManager.GeneratePasswordResetTokenAsync(user);
+            var callbackUrl = Url.Action("ResetPassword", "Account", new
+                {
+                    
+                    token = token
+                });
+
+                // send email
+                await _emailSender.SendEmailAsync(Email,"Reset Your Password",$"Please  <a href='http://localhost:5110{callbackUrl}'> click the link </a> to reset your password"); 
+                return RedirectToAction("Login", "Account");    
+        }
+        public IActionResult ResetPassword(string token){
+            if(token==null){
+                return RedirectToAction("Home","Index");
+            }
+            var model=new ResetPasswordModel{
+                Token=token
+            };
+
+            return View(model);
+
+        }
+        [HttpPost]
+         public async Task<IActionResult> ResetPassword(ResetPasswordModel model){
+                if(!ModelState.IsValid){
+                    return View(model);
+                }
+                var user=await _userManager.FindByEmailAsync(model.Email);
+                if(user==null){
+                    return RedirectToAction("Home","Index");
+                }
+                var result= await _userManager.ResetPasswordAsync(user,model.Token,model.Password);
+                if(result.Succeeded){
+                    return RedirectToAction("Login","Account");
+                }
+            return View();
+
+        }
+        }
 
 
     }
-}
+
