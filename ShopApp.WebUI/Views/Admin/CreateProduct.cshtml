@@ -1,54 +1,71 @@
 @model ProductModel
 @{
     ViewData["Title"] = "CreateProduct";
+    
 }
-
+@if (Model != null)
+{
+    <p>asfafafasagsagsags </p>
+}
 <h1 class="fade-in form-title">Create Product</h1>
 <hr class="fade-in" />
+   <form asp-controller="Admin" asp-action="CreateProduct" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-8">
 
-<div class="row fade-in">
-    <div class="col-md-8">
-        <form asp-controller="Admin" asp-action="CreateProduct" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name">Product Name</label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <div class="form-group row">
+                <label asp-for="Name" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Name" value="@Model.Name" class="form-control" />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ImageUrl">Image</label>
-                <input type="file" name="ImageUrl" class="form-control-file" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            <div class="form-group row">
+                <label asp-for="ImageUrl" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input type="hidden" name="ImageUrl" value="@Model.ImageUrl" />
+                    <input type="file" name="file" value="" />
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Description">Description</label>
-                <textarea id="editor" asp-for="Description" class="form-control"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
+            <div class="form-group row">
+                <label asp-for="Description" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <textarea  asp-for="Description" class="form-control">
+                        @Model.Description
+                    </textarea>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Price">Price</label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+            <div class="form-group row">
+                <label asp-for="Price" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Price" value="@Model.Price" class="form-control" />
+                </div>
             </div>
-            <div class="form-group">
-    <label>Categories</label>
-    @if(Model.CategoriesForCreateProduct != null)
-    {
-        foreach (var category in Model.CategoriesForCreateProduct)
-        {
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox"
-                       name="CategoryIds"
-                       value="@category.Id"
-                       class="custom-control-input"
-                       id="category@(category.Id)">
-                <label class="custom-control-label" for="category@(category.Id)">@category.Name</label>
+            <div class="form-group row">
+                <div class="col-md-10 offset-md-2">
+                    <button type="submit" class="btn btn-primary">Create Product</button>
+                </div>
             </div>
-        }
-    }
-</div>
 
-            <button type="submit" class="btn btn-primary">Save Product</button>
-        </form>
+        </div>
+        <div class="col-md-4">
+        @foreach (var item in (List<Category>)ViewBag.Categories)
+{
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox"
+               name="categoryIds"
+               value="@item.Id"
+               class="custom-control-input"
+               id="category@(item.Id)">
+        <label class="custom-control-label" for="category@(item.Id)">@item.Name</label>
     </div>
-</div>
+}
+
+
+        </div>
+    </div>
+
+</form>
+
+        </div>

@@ -1,14 +1,14 @@
 @model ProductModel
 @{
     ViewData["Title"] = "EditProduct";
-    var counter = 0;
+    
 }
 
 <h1 class="fade-in form-title">Edit Product</h1>
 <hr class="fade-in" />
 <form asp-controller="Admin" asp-action="EditProduct" method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="row fade-in">
+    <div class="row">
         <div class="col-md-8">
 
             <input type="hidden" name="Id" value="@Model.Id" />
@@ -42,47 +42,27 @@
             </div>
             <div class="form-group row">
                 <div class="col-md-10 offset-md-2">
-                    <button type="submit" class="btn btn-primary">Save Product</button>
+                    <button type="submit" class="btn btn-primary">Edit Product</button>
                 </div>
             </div>
 
         </div>
-       <div class="col-md-4">
-    @if (Model.SelectedCategories != null)
-    {
-        foreach (var item in Model.SelectedCategories)
-        {
-            var isChecked = "";
-            if (Model.SelectedCategories.Any(i => i.Id == item.Id))
-            {
-                isChecked = "checked";
+        <div class="col-md-4">
+           @foreach (var item in (List<Category>)ViewBag.Categories)
+{
+    var isChecked = Model.SelectedCategories.Any(i => i.Id == item.Id) ? "checked" : "";
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox"
+               name="categoryIds"
+               value="@item.Id"
+               class="custom-control-input"
+               id="category@(item.Id)"
+               @isChecked>
+        <label class="custom-control-label" for="category@(item.Id)">@item.Name</label>
+    </div>
+}
 
-                <input type="hidden" name="SelectedCategories[@counter].Id" value="@item.Id" />
-                <input type="hidden" name="SelectedCategories[@counter].Name" value="@item.Name" />
-
-                counter++;
-
-            }
-            else
-            {
-                isChecked = "";
-            }
-
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox"
-                       name="categoryIds"
-                       value="@item.Id"
-                       class="custom-control-input"
-                       id="category@(item.Id)"
-                       @isChecked>
-                <label class="custom-control-label" for="category@(item.Id)">@item.Name</label>
-            </div>
-        }
-    }
-</div>
-
+        </div>
     </div>
 
 </form>
-
-

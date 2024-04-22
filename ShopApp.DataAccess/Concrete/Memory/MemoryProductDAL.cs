@@ -19,6 +19,11 @@ namespace ShopApp.DataAccess.Concrete.Memory
             throw new NotImplementedException();
         }
 
+        public void CreateWithCategories(Product entity, int[] categoryIds)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Product entity)
         {
             throw new NotImplementedException();

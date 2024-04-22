@@ -33,15 +33,16 @@ namespace ShopApp.WebUI.Controllers
                 Products=_productService.GetAll()
             });
         }
-        [HttpGet]
-        public IActionResult CreateProduct(){
-            var categories=_categoryService.GetAll();
-            var model=new ProductModel(){
-                CategoriesForCreateProduct = categories
-            };
-            return View(new ProductModel());
-        }
-      public async Task<IActionResult> CreateProduct(ProductModel model, IFormFile file)
+        public IActionResult CreateProduct()
+{
+    var model = new ProductModel(); // ProductModel nesnesini oluştur
+    ViewBag.Categories = _categoryService.GetAll(); // Kategorileri ViewBag'e ata
+    return View(model); // View'e modeli gönder
+}
+
+
+   [HttpPost]
+public async Task<IActionResult> CreateProduct(ProductModel model, int[] categoryIds, IFormFile file)
 {
     if (ModelState.IsValid)
     {
@@ -63,87 +64,98 @@ namespace ShopApp.WebUI.Controllers
                     Description = model.Description,
                     ImageUrl = fileName,
                     Price = model.Price,
-        
-                    
+                    // Diğer özellikler
                 };
 
-                _productService.Create(entity);
+                _productService.CreateWithCategories(entity, categoryIds);
+                
+                // Ürün oluşturulduktan sonra başka bir sayfaya yönlendir
+                return RedirectToAction("ProductList", "Admin"); // Örnek bir yönlendirme
             }
-           
+            else
+            {
+                ModelState.AddModelError("", "Please select a file to upload.");
+            }
         }
         catch (Exception ex)
         {
             // Log the exception
-            ModelState.AddModelError("", "An error occurred while processing your request.");
+            ModelState.AddModelError("", $"An error occurred while processing your request: {ex.Message}");
         }
     }
 
+    // If ModelState is invalid or an error occurs, reload the categories and return the view with the model
+    ViewBag.Categories = _categoryService.GetAll();
     return View(model); 
 }
 
-       public IActionResult EditProduct(int? id)
+   public IActionResult EditProduct(int? id)
+{
+    if (id == null)
+    {
+        return NotFound();
+    }
+    var entity = _productService.GetByIdWithCategories((int)id);
+
+    if (entity == null)
+    {
+        return NotFound();
+    }
+
+    var model = new ProductModel()
+    {
+        Id = entity.Id,
+        Name = entity.Name,
+        Price = entity.Price,
+        Description = entity.Description,
+        ImageUrl = entity.ImageUrl,
+        SelectedCategories = entity.ProductCategories.Select(i => i.Category).ToList()
+    };
+
+    ViewBag.Categories = _categoryService.GetAll();
+
+    return View(model);
+}
+
+[HttpPost]
+public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryIds, IFormFile file)
+{
+    if (ModelState.IsValid)
+    {
+        var entity = _productService.GetById(model.Id);
+
+        if (entity == null)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var entity = _productService.GetByIdWithCategories((int)id);
-
-            if (entity == null)
-            {
-                return NotFound();
-            }
-
-            var model = new ProductModel()
-            {
-                Id = entity.Id,
-                Name = entity.Name,
-                Price = entity.Price,
-                Description = entity.Description,
-                ImageUrl = entity.ImageUrl,
-                SelectedCategories = entity.ProductCategories.Select(i => i.Category).ToList()
-            };
-
-            ViewBag.Categories = _categoryService.GetAll();
-
-            return View(model);
+            return NotFound();
         }
-        [HttpPost]
-        public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryIds, IFormFile file)
+
+        entity.Name = model.Name;
+        entity.Description = model.Description;               
+        entity.Price = model.Price;
+
+        if (file != null)
         {
-            if (ModelState.IsValid)
+            entity.ImageUrl = file.FileName;
+
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", file.FileName);
+            using (var stream = new FileStream(path, FileMode.Create))
             {
-                var entity = _productService.GetById(model.Id);
-
-                if (entity == null)
-                {
-                    return NotFound();
-                }
-
-                entity.Name = model.Name;
-                entity.Description = model.Description;               
-                entity.Price = model.Price;
-
-                if (file!=null)
-                {
-                    entity.ImageUrl = file.FileName;
-
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", file.FileName);
-                    using (var stream = new FileStream(path, FileMode.Create))
-                    {
-                        await file.CopyToAsync(stream);
-                    }
-                }
-
-                _productService.Update(entity, categoryIds);
-
-                return RedirectToAction("ProductList");
+                await file.CopyToAsync(stream);
             }
-
-            ViewBag.Categories = _categoryService.GetAll();
-
-            return View(model);
         }
+
+        // Kategori ilişkilerini güncelle
+        _productService.Update(entity, categoryIds);
+
+        return RedirectToAction("ProductList");
+    }
+
+    ViewBag.Categories = _categoryService.GetAll();
+
+    return View(model);
+}
+
+
         [HttpPost]
         public IActionResult DeleteProduct(int productId){
             var entity=_productService.GetById(productId);
@@ -203,6 +215,9 @@ namespace ShopApp.WebUI.Controllers
                 return Redirect("/admin/editcategory/"+categoryId);
         }
 
+        public IActionResult AccessDenied(){
+        return View();
+                }
 
         
     }

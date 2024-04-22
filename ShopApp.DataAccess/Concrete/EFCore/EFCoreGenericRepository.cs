@@ -29,16 +29,11 @@ namespace ShopApp.DataAccess.Concrete.EFCore
      public List<T> GetAll(Expression<Func<T, bool>> filter = null)
 {
     using (var context = new TContext())
-    {
-        IQueryable<T> query = context.Set<T>();
-
-        if (filter != null)
-        {
-            query = query.Where(filter);
-        }
-
-        return query.ToList();
-    }
+            {
+                return filter == null
+                         ? context.Set<T>().ToList()
+                         : context.Set<T>().Where(filter).ToList();
+            }
 }
 
 

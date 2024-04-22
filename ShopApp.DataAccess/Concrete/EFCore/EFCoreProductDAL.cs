@@ -82,6 +82,34 @@ namespace ShopApp.DataAccess.Concrete.EFCore
                 }
             }
         }
+        public void CreateWithCategories(Product entity, int[] categoryIds)
+{
+    using (var context = new ShopContext())
+    {
+        // Yeni ürünü ekle
+        context.Products.Add(entity);
+        context.SaveChanges();
+
+        // Yeni ürünün kategorilerini eklemek
+        foreach (var categoryId in categoryIds)
+        {
+            var category = context.Categories.Find(categoryId);
+            if (category != null)
+            {
+                entity.ProductCategories.Add(new ProductCategory
+                {
+                    CategoryId = categoryId,
+                    ProductId = entity.Id
+                });
+            }
+        }
+
+        context.SaveChanges();
+    }
+}
+
+        
+        
         
         }
     }

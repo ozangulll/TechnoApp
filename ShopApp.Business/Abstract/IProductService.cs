@@ -18,5 +18,6 @@ namespace ShopApp.Business.Abstract
         int GetCountByCategory(string category);
         Product GetByIdWithCategories(int id);
         void Update(Product entity, int[] categoryIds);
+        void CreateWithCategories(Product entity,int[] categoryIds);
     }
 }
