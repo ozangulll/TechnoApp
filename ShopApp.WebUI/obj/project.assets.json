@@ -3487,11 +3487,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\shopapp.webui\\ShopApp.WebUI.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.WebUI\\ShopApp.WebUI.csproj",
       "projectName": "ShopApp.WebUI",
-      "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\shopapp.webui\\ShopApp.WebUI.csproj",
+      "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.WebUI\\ShopApp.WebUI.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\shopapp.webui\\obj\\",
+      "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.WebUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3511,8 +3511,8 @@
             "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj": {
               "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj"
             },
-            "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
+            "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
             },
             "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
               "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"

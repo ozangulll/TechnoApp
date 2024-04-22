@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using ShopApp.WebUI.Extension;
 using ShopApp.WebUI.Identity;
 using ShopApp.WebUI.Models;
 
@@ -56,7 +57,12 @@ namespace ShopApp.WebUI.Controllers
                 });
 
                 // send email
-                await _emailSender.SendEmailAsync(model.Email,"Confirm Your Mail.",$"Please  <a href='http://localhost:5110{callbackUrl}'> click the link </a> to confirm your mail adress."); 
+                await _emailSender.SendEmailAsync(model.Email,"Confirm Your Mail.",$"Please  <a href='http://localhost:5110{callbackUrl}'> click the link </a> to confirm your mail adress.");
+                    TempData.Put("message",new ResultMessage{
+                    Title="Confirm Mail",
+                    Message="We sent a confirmation mail to you. Please confirm your email.",
+                    Css="warning"
+                }); 
                 return RedirectToAction("Login", "Account");
             }
 
@@ -110,6 +116,11 @@ namespace ShopApp.WebUI.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+                TempData.Put("message",new ResultMessage{
+                    Title="Log Out",
+                    Message="Your accounts have been terminated securely.",
+                    Css="warning"
+                });
             return Redirect("~/");
         }
 
@@ -117,8 +128,12 @@ namespace ShopApp.WebUI.Controllers
         {
             if (userId==null || token ==null)
             {
-                TempData["message"] = "Invalid Token.";
-                return View();
+                 TempData.Put("message",new ResultMessage{
+                    Title="Confirm",
+                    Message="Your informations are wrong to confirm account.",
+                    Css="danger"
+                });
+                return Redirect("~/");
             }
 
             var user = await _userManager.FindByIdAsync(userId);
@@ -127,12 +142,20 @@ namespace ShopApp.WebUI.Controllers
                 var result = await _userManager.ConfirmEmailAsync(user, token);
                 if (result.Succeeded)
                 {
-                    TempData["message"] = "Your Account Confirmed.";
-                    return View();
+                     TempData.Put("message",new ResultMessage{
+                    Title="Confirm",
+                    Message="Your account confirmed succesfully",
+                    Css="success"
+                });
+                    return RedirectToAction("Login");
                 }
             }
 
-            TempData["message"] = "Your account was not confirmed.";
+            TempData.Put("message",new ResultMessage{
+                    Title="Confirm",
+                    Message="Your accounts was not confirmed",
+                    Css="warning"
+                });
             return View();
         }
         public IActionResult ForgotPassword(){
@@ -141,10 +164,20 @@ namespace ShopApp.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(string Email){
             if(string.IsNullOrEmpty(Email)){
+                 TempData.Put("message",new ResultMessage{
+                    Title="Forgot Password",
+                    Message="Your information are incorrect",
+                    Css="warning"
+                });
                 return View();
             }
             var user= await _userManager.FindByEmailAsync(Email);
             if(user==null){
+                 TempData.Put("message",new ResultMessage{
+                    Title="Forgot Password",
+                    Message="An account could not be found with this email address.",
+                    Css="warning"
+                });
                 return View();
             }
             var token= await _userManager.GeneratePasswordResetTokenAsync(user);
@@ -156,6 +189,11 @@ namespace ShopApp.WebUI.Controllers
 
                 // send email
                 await _emailSender.SendEmailAsync(Email,"Reset Your Password",$"Please  <a href='http://localhost:5110{callbackUrl}'> click the link </a> to reset your password"); 
+         TempData.Put("message",new ResultMessage{
+                    Title="Reset Password",
+                    Message="We sent a mail you to reset your password",
+                    Css="success"
+                });
                 return RedirectToAction("Login", "Account");    
         }
         public IActionResult ResetPassword(string token){
