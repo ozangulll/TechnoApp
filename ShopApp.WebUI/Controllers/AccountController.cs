@@ -109,7 +109,7 @@ namespace ShopApp.WebUI.Controllers
                 return Redirect(model.ReturnUrl ?? "~/");
             }
 
-            ModelState.AddModelError("", "Email or password incorrect.");
+            ModelState.AddModelError("", "Username or password incorrect.");
             return View(model);
         }
 
@@ -223,6 +223,11 @@ namespace ShopApp.WebUI.Controllers
             return View();
 
         }
+        
+        public IActionResult AccessDenied(){
+            return View();
+        }
+
         }
 
 

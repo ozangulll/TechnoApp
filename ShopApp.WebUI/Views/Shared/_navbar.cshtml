@@ -83,6 +83,7 @@
                   <li class="nav-item">
                       <a href="#" class="nav-link">Orders</a>
                   </li>
+                  @if(User.IsInRole("admin")){
                     <li class="has-children">
                       <a href="#" class="nav-link">Admin Processes</a>
                       <ul class="dropdown arrow-top">
@@ -100,6 +101,7 @@
                       </li>
                       </ul>
                     </li>
+                    }
                     }
                  @if(User.Identity.IsAuthenticated){
                   <li class="nav-item">
