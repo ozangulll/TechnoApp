@@ -3,20 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using ShopApp.Business.Abstract;
+using ShopApp.WebUI.Identity;
+using ShopApp.WebUI.Models;
 
 namespace ShopApp.WebUI.Controllers
 {
-      [Authorize]
-    public class CartController:Controller
+    [Authorize]
+    public class CartController : Controller
     {
-      
-        public IActionResult Index(){
-            return View();
+        private ICartService _cartService;
+        private UserManager<AppUser> _userManager;
+
+        public CartController(ICartService cartService, UserManager<AppUser> userManager)
+        {
+            _cartService = cartService;
+            _userManager = userManager;
         }
+        public IActionResult Index()
+        {
+            var cart = _cartService.GetCartByUserId(_userManager.GetUserId(User));
+            return View(new CartModel()
+            {
+                CartId = cart.Id,
+                CartItems = cart.CartItems.Select(i => new CartItemModel()
+                {
+                    CartItemId = i.Id,
+                    ProductId = i.Product.Id,
+                    Name = i.Product.Name,
+                    Price = (decimal)i.Product.Price,
+                    ImageUrl = i.Product.ImageUrl,
+                    Quantity = i.Quantity
+                }).ToList()
+            });
+        }
+
         [HttpPost]
-        public IActionResult AddToCart(){
+        public IActionResult AddToCart()
+        {
             return View();
         }
     }

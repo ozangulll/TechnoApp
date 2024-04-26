@@ -6,8 +6,8 @@ using ShopApp.Entities;
 
 namespace ShopApp.DataAccess.Abstract
 {
-    public interface ICartDAL:IRepository<Cart>
+    public interface ICartDAL : IRepository<Cart>
     {
-        
+        Cart GetByUserId(string userid);
     }
 }

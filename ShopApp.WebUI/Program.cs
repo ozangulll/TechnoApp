@@ -103,7 +103,11 @@ app.UseAuthorization();
         pattern: "products/{category?}",
         defaults: new { controller = "Shop", action = "List" }
     );
-
+     endpoints.MapControllerRoute(
+        name: "cart",
+        pattern: "cart",
+        defaults: new { controller = "Cart", action = "Index" }
+    );
     endpoints.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}"
