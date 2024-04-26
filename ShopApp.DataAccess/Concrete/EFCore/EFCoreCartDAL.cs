@@ -10,6 +10,13 @@ namespace ShopApp.DataAccess.Concrete.EFCore
 {
     public class EFCoreCartDAL : EFCoreGenericRepository<Cart, ShopContext>, ICartDAL
     {
+        public override void Update(Cart entity)
+        {
+            using (var context=new ShopContext()){
+                context.Carts.Update(entity);
+                context.SaveChanges();
+            }
+        }
         public Cart GetByUserId(string userid)
         {
             using (var context=new ShopContext()){

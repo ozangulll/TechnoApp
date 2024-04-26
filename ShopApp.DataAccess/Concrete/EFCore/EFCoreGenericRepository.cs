@@ -45,7 +45,7 @@ namespace ShopApp.DataAccess.Concrete.EFCore
             }
         }
 
-        public T GetOne(Expression<Func<T, bool>> filter)
+        public  T GetOne(Expression<Func<T, bool>> filter)
         {
            using(var context=new TContext()){
                 return context.Set<T>().Where(filter).SingleOrDefault();
@@ -53,7 +53,7 @@ namespace ShopApp.DataAccess.Concrete.EFCore
             }
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             using(var context=new TContext()){
                 context.Entry(entity).State=EntityState.Modified;
