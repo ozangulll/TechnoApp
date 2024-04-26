@@ -27,5 +27,11 @@ namespace ShopApp.DataAccess.Concrete.EFCore
                             .FirstOrDefault(i=>i.userId==userid);
             }
         }
+        public void DeleteFromCart(int cartId,int productId){
+            using (var context=new ShopContext()){
+                var cmd=@"delete from CartItem  where CartId=@p0 and ProductId=@p1";
+                context.Database.ExecuteSqlRaw(cmd,cartId,productId);
+            }
+        }
     }
 }

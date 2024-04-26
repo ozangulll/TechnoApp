@@ -26,12 +26,21 @@ namespace ShopApp.Business.Concrete
                     cart.CartItems.Add(new CartItem(){
                         ProductId=productId,
                         Quantity=quantity,
-                        CardId=cart.Id
+                        CartId=cart.Id
                     });
                 }else{
                    cart.CartItems[index].Quantity +=quantity; 
                 }
                 _cartDal.Update(cart);
+            }
+        }
+
+        public void DeleteFromCart(string? userid, int productId)
+        {
+            var cart=GetCartByUserId(userid);
+            if(cart!=null){
+                var cartId=cart.Id;
+                _cartDal.DeleteFromCart(cartId,productId);
             }
         }
 

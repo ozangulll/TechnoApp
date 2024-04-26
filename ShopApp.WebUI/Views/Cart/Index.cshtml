@@ -7,71 +7,98 @@
     .white-text {
         color: white;
     }
+
+    .outer-container {
+        display: inline-block; 
+    }
+
+    
+    .btn {
+        margin: 5px; 
+        background-color: transparent; 
+        border-color: transparent; 
+        color: white; 
+    }
 </style>
 
-<h1 class="white-text">Shopping Cart</h1>
+<h1 class="white-text">Cart Items</h1>
 
 <div class="row mt-5">
     <div class="col-md-8">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th class="white-text"></th>
-                    <th class="white-text">Product Name</th>
-                    <th class="white-text">Price</th>
-                    <th class="white-text">Quantity</th>
-                    <th class="white-text">Total</th>
-                    <th class="white-text"></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.CartItems)
-                {
-                <tr>
-                    <td>
-                        <img src="~/img/@item.ImageUrl" width="80" />
-                    </td>
-                    <td class="white-text">@item.Name</td>
-                    <td class="white-text">@item.Price.ToString("c")</td>
-                    <td class="white-text">@item.Quantity</td>
-                    <td class="white-text">@((item.Quantity*item.Price).ToString("c"))</td>
-                    <td>
-                        <button class="btn btn-danger btn-sm">
-                            <i class="fa fa-times fa-fw"></i>
-                        </button>
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
+        @if(Model.CartItems.Count > 0)
+        {
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="white-text"></th>
+                        <th class="white-text">Product Name</th>
+                        <th class="white-text">Price</th>
+                        <th class="white-text">Quantity</th>
+                        <th class="white-text">Total</th>
+                        <th class="white-text"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/img/@item.ImageUrl" width="80" />
+                            </td>
+                            <td class="white-text">@item.Name</td>
+                            <td class="white-text">@item.Price.ToString("c")</td>
+                            <td class="white-text">@item.Quantity</td>
+                            <td class="white-text">@((item.Quantity * item.Price).ToString("c"))</td>
+                            <td>
+                                <form asp-controller="Cart" asp-action="DeleteFromCart" method="post">
+                                    <input type="hidden" name="productId" value="@item.ProductId" />
+                                    <button class="btn btn-danger btn-sm">
+                                        <i class="fa fa-times fa-fw"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-warning">There is no product in cart!</div>
+        }
     </div>
-    <div class="col-md-4">
-        <div class="text-left">
-            <h4 class="white-text"> Cart Summary </h4>
+    @if(Model.CartItems.Count > 0)
+    {
+        <div class="col-md-4">
+            <div class="text-left">
+                <h4 class="white-text"> Cart Summary </h4>
+            </div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th class="white-text">Cart Total</th>
+                        <td class="white-text">@Model.TotalPrice().ToString("c")</td>
+                    </tr>
+                    <tr>
+                        <th class="white-text"> Shipping </th>
+                        <td class="white-text"> Free</td>
+                    </tr>
+                    <tr>
+                        <th class="white-text"> Order Total</th>
+                        <td class="white-text">@Model.TotalPrice().ToString("c") </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="outer-container">
+                <div class="text-center">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fa fa-arrow-circle-left fa-fw"></i> Continue Shopping
+                    </a>
+                    <a href="/checkout" class="btn btn-primary">
+                        <i class="fa fa-arrow-circle-right fa-fw"></i> Checkout
+                    </a>
+                </div>
+            </div>
         </div>
-        <table class="table">
-            <tbody>
-                <tr>
-                    <th class="white-text">Cart Total</th>
-                    <td class="white-text">@Model.TotalPrice().ToString("c")</td>
-                </tr>
-                <tr>
-                    <th class="white-text"> Shipping </th>
-                    <td class="white-text"> Free</td>
-                </tr>
-                <tr>
-                    <th class="white-text"> Order Total</th>
-                    <td class="white-text">@Model.TotalPrice().ToString("c") </td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="text-center">
-            <a href="/" class=" btn btn-primary">
-                <i class="fa fa-arrow-circle-left fa-fw"></i> Continue Shopping
-            </a>
-             <a href="/checkout" class=" btn btn-primary">
-                <i class="fa fa-arrow-circle-right fa-fw"></i> Checkout
-            </a>
-        </div>
-    </div>
+    }
 </div>

@@ -12,8 +12,8 @@ using ShopApp.DataAccess.Concrete.EFCore;
 namespace ShopApp.DataAccess.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20240426175904_AddingCardEntitie")]
-    partial class AddingCardEntitie
+    [Migration("20240426203934_CardUpdated")]
+    partial class CardUpdated
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,9 +49,6 @@ namespace ShopApp.DataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CardId")
-                        .HasColumnType("int");
 
                     b.Property<int>("CartId")
                         .HasColumnType("int");
