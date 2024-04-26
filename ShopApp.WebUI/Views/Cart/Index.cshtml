@@ -9,19 +9,19 @@
     }
 </style>
 
-<h1>Shopping Cart</h1>
+<h1 class="white-text">Shopping Cart</h1>
 
 <div class="row mt-5">
     <div class="col-md-8">
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th></th>
+                    <th class="white-text"></th>
                     <th class="white-text">Product Name</th>
                     <th class="white-text">Price</th>
                     <th class="white-text">Quantity</th>
                     <th class="white-text">Total</th>
-                    <th></th>
+                    <th class="white-text"></th>
                 </tr>
             </thead>
             <tbody>
@@ -45,5 +45,33 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <div class="text-left">
+            <h4 class="white-text"> Cart Summary </h4>
+        </div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th class="white-text">Cart Total</th>
+                    <td class="white-text">@Model.TotalPrice().ToString("c")</td>
+                </tr>
+                <tr>
+                    <th class="white-text"> Shipping </th>
+                    <td class="white-text"> Free</td>
+                </tr>
+                <tr>
+                    <th class="white-text"> Order Total</th>
+                    <td class="white-text">@Model.TotalPrice().ToString("c") </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a href="/" class=" btn btn-primary">
+                <i class="fa fa-arrow-circle-left fa-fw"></i> Continue Shopping
+            </a>
+             <a href="/checkout" class=" btn btn-primary">
+                <i class="fa fa-arrow-circle-right fa-fw"></i> Checkout
+            </a>
+        </div>
+    </div>
 </div>
