@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using ShopApp.Business.Abstract;
 using ShopApp.WebUI.Extension;
 using ShopApp.WebUI.Identity;
 using ShopApp.WebUI.Models;
@@ -17,12 +18,14 @@ namespace ShopApp.WebUI.Controllers
         private UserManager<AppUser> _userManager;
         private SignInManager<AppUser> _signInManager;
         private IEmailSender _emailSender;
+        private ICartService _cartService;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,IEmailSender emailSender)
+        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,IEmailSender emailSender,ICartService cartService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender=emailSender;
+            _cartService=cartService;
         }
         public IActionResult Register()
         {
@@ -142,6 +145,8 @@ namespace ShopApp.WebUI.Controllers
                 var result = await _userManager.ConfirmEmailAsync(user, token);
                 if (result.Succeeded)
                 {
+                    //create cart object
+                    _cartService.InitializeCart(user.Id);
                      TempData.Put("message",new ResultMessage{
                     Title="Confirm",
                     Message="Your account confirmed succesfully",

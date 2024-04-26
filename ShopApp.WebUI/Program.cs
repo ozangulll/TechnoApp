@@ -58,9 +58,10 @@ builder.Services.Configure<IdentityOptions>(options=>{
 builder.Services.AddScoped<IProductDAL, EFCoreProductDAL>();
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryDAL, EFCoreCategoryDAL>();
+builder.Services.AddScoped<ICartDAL,EFCoreCartDAL>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<IEmailSender,EmailSenderService>();
-
+builder.Services.AddScoped<ICartService,CartManager>();
 builder.Services.AddControllersWithViews(); // Changed from AddMvc()
 builder.Services.AddSendGrid(options => {
     options.ApiKey = builder.Configuration.GetSection("SendGridSettings")

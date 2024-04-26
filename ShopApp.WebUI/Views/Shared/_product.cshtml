@@ -15,7 +15,9 @@
         <div class="card-footer text-center">
             <div class="description" style="display: none; color: white;">@Model.Description</div>
             <a asp-controller="Shop" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-outline-primary btn-sm">Details</a>
-            <a href="#" class="btn btn-outline-primary btn-sm ml-3" onclick="toggleDescription(this)">Add To Cart</a>
+            @if(User.Identity.IsAuthenticated){
+            <a asp-controller="Cart" asp-action="AddToCart" class="btn btn-outline-primary btn-sm ml-3" onclick="toggleDescription(this)">Add To Cart</a>
+            }
         </div>
     </div>
 </div>
