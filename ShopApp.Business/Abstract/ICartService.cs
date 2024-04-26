@@ -10,5 +10,6 @@ namespace ShopApp.Business.Abstract
     {
         void InitializeCart(string userid);
         Cart GetCartByUserId(string userid);
+        void AddToCart(string userid,int productId,int quantity);
     }
 }
