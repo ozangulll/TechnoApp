@@ -2679,11 +2679,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
+            "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
             },
-            "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
-              "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.Entities\\ShopApp.Entities.csproj"
+            "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+              "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
             }
           }
         }
