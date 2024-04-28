@@ -1,162 +1,110 @@
-@model OrderModel
+@model  OrderModel
 @{
     ViewData["Title"] = "Checkout";
 }
-
-<style>
-    .rounded-box {
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .form-control {
-        transition: all 0.3s ease;
-    }
-
-    .form-control::placeholder {
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .form-control:focus::placeholder {
-        opacity: 1;
-    }
-
-    .form-control:focus {
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-</style>
 
 <h1>Checkout</h1>
 <hr />
 <div class="row">
     <div class="col-md-8">
-        <div class="rounded-box">
-            <h4 class="mb-3">Order Details</h4>
-            <form action="/checkout" method="post">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label asp-for="@Model.FirstName"></label>
-                        <input asp-for="@Model.FirstName" type="text" name="firstName" value="" class="form-control" placeholder="First Name" />
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label asp-for="@Model.LastName"></label>
-                        <input  asp-for="@Model.LastName"type="text" name="lastName" value="" class="form-control" placeholder="Last Name" />
-                    </div>
+        <h4 class="mb-3">Order Details</h4>
+        <form action="/checkout" method="post">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="@Model.FirstName"></label>
+                    <input asp-for="@Model.FirstName" value="" class="form-control" />
                 </div>
-                <div class="mb-3">
-                    <label asp-for="@Model.Address"></label>
-                    <textarea asp-for="@Model.Address" name="address" class="form-control" placeholder="Address"></textarea>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="@Model.LastName"></label>
+                    <input asp-for="@Model.LastName" value="" class="form-control" />
                 </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label asp-for="@Model.City" > </label>
-                        <input asp-for="@Model.City" type="text" name="city" value="" class="form-control" placeholder="City" />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label asp-for="@Model.Phone"></label>
-                        <input asp-for="@Model.Phone" type="text" name="phone" value="" class="form-control" placeholder="Phone" />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label asp-for="@Model.Email" ></label>
-                        <input  asp-for="@Model.Email" type="text" name="email" value="" class="form-control" placeholder="Email" />
-                    </div>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Address"></label>
+                <textarea asp-for="@Model.Address" class="form-control"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="@Model.City"></label>
+                    <input asp-for="@Model.City" value="" class="form-control" />
                 </div>
-                <hr class="mb-4" />
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="save-info">
-                    <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="@Model.Phone"></label>
+                    <input asp-for="@Model.Phone" value="" class="form-control" />
                 </div>
-                <hr class="mb-4" />
-                <div class="d-block my-3">
-                    <div class="custom-control custom-radio">
-                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                        <label class="custom-control-label" for="credit">Credit card</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                        <label class="custom-control-label" for="eft">EFT</label>
-                    </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="@Model.Email"></label>
+                    <input asp-for="@Model.Email" value="" class="form-control" />
                 </div>
-                <h4 class="mb-3">Payment</h4>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label asp-for="@Model.CardName" ></label>
-                        <input asp-for="@Model.CardName" type="text" name="cartname" value="" class="form-control" placeholder="Name on Credit Card" />
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label asp-for="@Model.CardNumber"></label>
-                        <input asp-for="@Model.CardNumber" type="text" name="cardnumber" value="" class="form-control" placeholder="Credit Card Number" />
-                    </div>
+            </div>
+            <hr class="mb-4" />
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="save-info">
+                <label class="custom-control-label" for="save-info">Save this information for next time</label>
+            </div>
+            <hr class="mb-4" />
+            <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                    <label class="custom-control-label" for="credit">Credit card</label>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label asp-for="@Model.ExpirationMonth" ></label>
-                        <input  asp-for="@Model.ExpirationMonth"  type="text" name="month" value="" class="form-control" placeholder="Month" />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label  asp-for="@Model.ExpirationYear" ></label>
-                        <input  asp-for="@Model.ExpirationYear" type="text" name="year" value="" class="form-control" placeholder="Year" />
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label asp-for="@Model.Cvv" ></label>
-                        <input asp-for="@Model.Cvv"  type="text" name="cvv" value="" class="form-control" placeholder="CVV" />
-                    </div>
+                <div class="custom-control custom-radio">
+                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="eft">EFT</label>
                 </div>
-                <hr class="mb-4" />
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Complete Order</button>
-            </form>
-        </div>
+            </div>
+            <h4 class="mb-3">Payment</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="@Model.CardName"></label>
+                    <input asp-for="@Model.CardName" value="" class="form-control" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="@Model.CardNumber"></label>
+                    <input asp-for="@Model.CardNumber" value="" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="@Model.ExpirationMonth"></label>
+                    <input asp-for="@Model.ExpirationMonth" value="" class="form-control" />
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="@Model.ExpirationYear"></label>
+                    <input asp-for="@Model.ExpirationYear" value="" class="form-control" />
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="@Model.Cvv"></label>
+                    <input asp-for="@Model.Cvv" value="" class="form-control" />
+                </div>
+            </div>
+            <hr class="mb-4" />
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Complete Order</button>
+        </form>
     </div>
     <div class="col-md-4 mb-4">
-        <div class="rounded-box">
-            <h4 class="mb-3">
-                <span class="text-muted">Your Cart</span>
-            </h4>
-            <ul class="list-group mb-3">
-                @if (Model.CartModel != null && Model.CartModel.CartItems != null)
-{
-@foreach(var item in Model.CartModel.CartItems){
-                    <li class="list-group-item d-flex justify-content-between">
+
+        <h4 class="mb-3">
+            <span class="text-muted">Your Cart</span>
+        </h4>
+        <ul class="list-group mb-3">
+            @foreach (var item in Model.CartModel.CartItems)
+            {
+                <li class="list-group-item d-flex justify-content-between">
                     <div>
                         <h6 class="my-0">@item.Name
-                            <small> x @item.Quantity</small>
+                            <small>x @item.Quantity</small>
                         </h6>
-                        
                     </div>
-                    <span class="text-muted">@item.Price</span>
+                    <span class="text-muted">@item.Price TL</span>
                 </li>
-                }
-}
+            }
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Total (TL)</span>
+                <strong>@Model.CartModel.TotalPrice() TL</strong>
+            </li>
+        </ul>
 
-
-
-            </ul>
-        </div>
     </div>
 </div>
 
-<script>
-    document.querySelectorAll('.form-control').forEach(input => {
-        input.addEventListener('focus', () => {
-            input.placeholder = '';
-        });
-        input.addEventListener('blur', () => {
-            input.placeholder = input.getAttribute('placeholder');
-        });
-    });
-
-    document.querySelectorAll('.rounded-box').forEach(box => {
-        box.addEventListener('mouseenter', () => {
-            box.style.transform = 'scale(1.05)';
-        });
-        box.addEventListener('mouseleave', () => {
-            box.style.transform = 'scale(1)';
-        });
-    });
-</script>

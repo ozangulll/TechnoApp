@@ -25,7 +25,6 @@ namespace ShopApp.Entities
         public string ?LastName { get; set; }
         public string ?Address { get; set; }
         public string ?City { get; set; }
-        public string ?Phone { get; set; }
         public string ?Email { get; set; }
         public string ?OrderNote { get; set; }
         public string ?PaymentId { get; set; }
@@ -40,7 +39,7 @@ namespace ShopApp.Entities
         Completed=2
     }
     public enum EnumPaymentTypes{
-        CreditCard=0,
+        CreditCart=0,
         EFT=1
     }
 }

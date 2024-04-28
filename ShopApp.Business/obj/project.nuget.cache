@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wscixWUox7W93t6DnlKWS3F7NhvG4p62j15xhYneOopIPMXSkx1C2mRtGG27jptCyvGdP6b4mrmDFftet2JGjA==",
+  "dgSpecHash": "qxFdleoU4GIVb7G6/QZN828geUL2iE2cEFjK2+2Qk3+MxmbyV8+LffpNGXBGTvr0Bb6Kuh0CcXyboh7WoyuMjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.Business\\ShopApp.Business.csproj",
+  "projectFilePath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Acer\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

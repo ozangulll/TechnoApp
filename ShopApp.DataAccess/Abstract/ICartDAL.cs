@@ -10,5 +10,6 @@ namespace ShopApp.DataAccess.Abstract
     {
         Cart GetByUserId(string userid);
         void DeleteFromCart(int cardId, int productId);
+        void ClearCart(int cartId);
     }
 }

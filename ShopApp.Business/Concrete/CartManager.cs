@@ -35,6 +35,11 @@ namespace ShopApp.Business.Concrete
             }
         }
 
+        public void ClearCart(int cartId)
+        {
+            _cartDal.ClearCart(cartId);
+        }
+
         public void DeleteFromCart(string? userid, int productId)
         {
             var cart=GetCartByUserId(userid);
