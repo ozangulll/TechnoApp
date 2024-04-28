@@ -109,6 +109,11 @@ app.UseAuthorization();
         defaults: new { controller = "Cart", action = "Index" }
     );
     endpoints.MapControllerRoute(
+        name: "checkout",
+        pattern: "checkout",
+        defaults: new { controller = "Cart", action = "Checkout" }
+    );
+    endpoints.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}"
     );

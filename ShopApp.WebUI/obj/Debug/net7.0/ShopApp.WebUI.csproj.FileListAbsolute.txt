@@ -168,3 +168,4 @@ C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0
 C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\SendGrid.dll
 C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\StarkbankEcdsa.dll
 C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\SendGrid.Extensions.DependencyInjection.dll
+C:\Users\Acer\Desktop\TechnoApp\ecommerce-shopapp\shopapp.webui\bin\Debug\net7.0\IyzipayCore.dll

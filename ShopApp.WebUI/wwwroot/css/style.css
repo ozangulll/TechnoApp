@@ -3,9 +3,9 @@ body {
     background-color: #fff;
     height: 200vh;
     position: relative;
-    background-image: url('../images/hero_1.jpg');
+    background-image: url('../images/dnm.jpg');
     background-size: cover;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(0.2px);
     
 }
 
