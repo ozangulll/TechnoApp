@@ -6,8 +6,8 @@ using ShopApp.Entities;
 
 namespace ShopApp.DataAccess.Abstract
 {
-    public interface IOrderDAL:IRepository<Order>
+    public interface IOrderDAL : IRepository<Order>
     {
-        
+        List<Order> GetOrders(string userId);
     }
 }
