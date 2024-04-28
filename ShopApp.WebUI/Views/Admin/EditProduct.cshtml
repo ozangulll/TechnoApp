@@ -4,7 +4,7 @@
     
 }
 
-<h1 class="fade-in form-title">Edit Product</h1>
+<h1 class="fade-in form-title" style="color:white">Edit Product</h1>
 <hr class="fade-in" />
 <form asp-controller="Admin" asp-action="EditProduct" method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger"></div>
@@ -18,14 +18,16 @@
                     <input asp-for="Name" value="@Model.Name" class="form-control" />
                 </div>
             </div>
-            <div class="form-group row">
-                <label asp-for="ImageUrl" class="col-md-2 col-form-label"></label>
-                <div class="col-md-10">
-                    <input type="hidden" name="ImageUrl" value="@Model.ImageUrl" />
-                    <img src="~/img/@Model.ImageUrl" width="80" />
-                    <input type="file" name="file" value="" />
-                </div>
-            </div>
+   <div class="form-group row">
+    <label asp-for="ImageUrl" class="col-md-2 col-form-label"></label>
+    <div class="col-md-10">
+        <input type="hidden" name="ImageUrl" value="@Model.ImageUrl" />
+        <img src="~/img/@Model.ImageUrl" width="80" id="previewImage" />
+        <input type="file" name="file" id="fileInput" />
+    </div>
+</div>
+
+
             <div class="form-group row">
                 <label asp-for="Description" class="col-md-2 col-form-label"></label>
                 <div class="col-md-10">

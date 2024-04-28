@@ -24,19 +24,19 @@
             <div class="form-group">
                 
                 <input type="text" class="form-control item" id="Username" placeholder="Username"  value="@Model.Username" asp-for="Username">
-                 <span asp-validation-for="Username" class="text-danger"></span>
+                 
             </div>
             <div class="form-group">
                 <input asp-for="Email" type="text" class="form-control item" id="email" placeholder="Email" value="@Model.Email">
-                 <span asp-validation-for="Email" class="text-danger"></span>
+                 
             </div>
             <div class="form-group">
                 <input  asp-for="Password" type="password" class="form-control item" id="password" placeholder="Password" value="@Model.Password">
-                 <span asp-validation-for="Password" class="text-danger"></span>
+                
             </div>
              <div class="form-group">
                 <input asp-for="RePassword" type="password" class="form-control item" id="RePassword" placeholder="RePassword" value="@Model.RePassword">
-                 <span asp-validation-for="RePassword" class="text-danger"></span>
+                
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-block create-account">Register</button>

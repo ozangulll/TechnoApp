@@ -67,11 +67,15 @@ namespace ShopApp.WebUI.Controllers
                     Css="warning"
                 }); 
                 return RedirectToAction("Login", "Account");
-            }
-
-
-            ModelState.AddModelError("", "There is a unkown error, please try later.");
-            return View(model);
+            }else
+    {
+        // User creation failed
+        foreach (var error in result.Errors)
+        {
+            ModelState.AddModelError("", error.Description);
+        }
+        return View(model);
+    }
         }
 
 

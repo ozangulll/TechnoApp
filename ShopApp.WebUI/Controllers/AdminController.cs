@@ -133,8 +133,7 @@ public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryI
         entity.Description = model.Description;               
         entity.Price = model.Price;
 
-        if (file != null)
-        {
+        
             entity.ImageUrl = file.FileName;
 
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\img", file.FileName);
@@ -142,7 +141,7 @@ public async Task<IActionResult> EditProduct(ProductModel model, int[] categoryI
             {
                 await file.CopyToAsync(stream);
             }
-        }
+        
 
         // Kategori ilişkilerini güncelle
         _productService.Update(entity, categoryIds);

@@ -2658,11 +2658,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
+      "projectUniqueName": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.Business\\ShopApp.Business.csproj",
       "projectName": "ShopApp.Business",
-      "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
+      "projectPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.Business\\ShopApp.Business.csproj",
       "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\eCommerce-ShopApp\\ShopApp.Business\\obj\\",
+      "outputPath": "C:\\Users\\Acer\\Desktop\\TechnoApp\\ecommerce-shopapp\\ShopApp.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -3,11 +3,8 @@
     ViewData["Title"] = "CreateProduct";
     
 }
-@if (Model != null)
-{
-    <p>asfafafasagsagsags </p>
-}
-<h1 class="fade-in form-title">Create Product</h1>
+
+<h1 class="fade-in form-title" style="color: white;">Create Product</h1>
 <hr class="fade-in" />
    <form asp-controller="Admin" asp-action="CreateProduct" method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger"></div>

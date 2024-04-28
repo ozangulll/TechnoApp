@@ -1,0 +1,71 @@
+@model List<OrderListModel>
+@{
+    ViewData["Title"] = "GetOrders";
+}
+
+<h1> Orders </h1>
+<hr/>
+
+@foreach(var order in Model)
+{
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            Order Id: # @order.OrderId
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered mb-0">
+                   <thead class="thead">
+        <tr>
+            <th class="text-white">Product</th>
+            <th class="text-white">Price</th>
+            <th class="text-white">Quantity</th>
+            <th class="text-white">Total</th>
+        </tr>
+    </thead>
+                <tbody>
+                    @foreach (var orderItem in order.OrderItems)
+                    {
+                        <tr>
+                            <td class="text-white">
+                                <img src="~/img/@orderItem.ImageUrl" width="50" alt="@orderItem.Name" />
+                                @orderItem.Name
+                            </td>
+                            <td class="text-white">@orderItem.Price</td>
+                            <td class="text-white">@orderItem.Quantity</td>
+                            <td class="text-white">@order.TotalPrice()</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-right text-white">Total:</td>
+                        <td class="text-white">@order.TotalPrice()</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-white">Customer Name:</strong> @order.FirstName @order.LastName
+                </div>
+                <div class="col-md-6">
+                    <strong class="text-white">Address:</strong> @order.Address
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-white">Email:</strong> @order.Email
+                </div>
+                <div class="col-md-6">
+                    <strong class="text-white">Payment Status:</strong> @order.PaymentTypes
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong class="text-white">Order State:</strong> @order.OrderState
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,8 +1,27 @@
 @model ResultMessage
-<div class="row">
-<div class="alert alert -@Model.Css">
 
-    <h4 class="alert-title">@Model.Title</h4>
-    <p>@Model.Message </p>
+<div class="row">
+    <div class="col-md-12">
+        <div id="resultBox" class="alert alert-@Model.Css">
+            <h4 class="alert-title">@Model.Title</h4>
+            <p>@Model.Message</p>
+        </div>
+    </div>
 </div>
-</div>
+
+<style>
+    /* Custom CSS animations */
+    @@keyframes slideIn {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    /* Apply animation to the result box */
+    #resultBox {
+        animation: slideIn 0.5s ease-out;
+    }
+</style>
