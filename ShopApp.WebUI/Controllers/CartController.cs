@@ -8,6 +8,7 @@ using IyzipayCore.Request;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ShopApp.Business.Abstract;
 using ShopApp.Entities;
 using ShopApp.WebUI.Identity;
@@ -99,7 +100,7 @@ namespace ShopApp.WebUI.Controllers
             var payment= PaymentProcess(model);
              if(payment.Status=="success"){
                 SaveOrder(model,payment,userId);
-                ClearCart(userId);
+               // ClearCart(userId);
                return View("Success");
             }
             }
@@ -144,23 +145,30 @@ namespace ShopApp.WebUI.Controllers
             options.BaseUrl = "https://sandbox-api.iyzipay.com";    
             CreatePaymentRequest request = new CreatePaymentRequest();
             request.Locale = Locale.TR.ToString();
-            request.ConversationId = "123456789";
-            request.Price = "1.0";
-            request.PaidPrice = "1.2";
+            request.ConversationId = Guid.NewGuid().ToString();
+            request.Price = model.CartModel.TotalPrice().ToString().Split(",")[0];
+            request.PaidPrice = model.CartModel.TotalPrice().ToString().Split(",")[0]; 
             request.Currency = Currency.TRY.ToString();
             request.Installment = 1;
-            request.BasketId = "B67832";
+            request.BasketId = model.CartModel.CartId.ToString();
             request.PaymentChannel = PaymentChannel.WEB.ToString();
             request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
 
             PaymentCard paymentCard = new PaymentCard();
-            paymentCard.CardHolderName = "John Doe";
+            paymentCard.CardHolderName = model.CardName;
+            paymentCard.CardNumber = model.CardNumber;
+            paymentCard.ExpireMonth = model.ExpirationMonth;
+            paymentCard.ExpireYear = model.ExpirationYear;
+            paymentCard.Cvc = model.Cvv;
+            paymentCard.RegisterCard = 0;
+            request.PaymentCard = paymentCard;
+            /*
+                paymentCard.CardHolderName = "John Doe";
             paymentCard.CardNumber = "5528790000000008";
             paymentCard.ExpireMonth = "12";
             paymentCard.ExpireYear = "2030";
             paymentCard.Cvc = "123";
-            paymentCard.RegisterCard = 0;
-            request.PaymentCard = paymentCard;
+            */
 
             Buyer buyer = new Buyer();
             buyer.Id = "BY789";
@@ -195,32 +203,19 @@ namespace ShopApp.WebUI.Controllers
             request.BillingAddress = billingAddress;
 
             List<BasketItem> basketItems = new List<BasketItem>();
-            BasketItem firstBasketItem = new BasketItem();
-            firstBasketItem.Id = "BI101";
-            firstBasketItem.Name = "Binocular";
-            firstBasketItem.Category1 = "Collectibles";
-            firstBasketItem.Category2 = "Accessories";
-            firstBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            firstBasketItem.Price = "0.3";
-            basketItems.Add(firstBasketItem);
+            BasketItem basketItem;
+            foreach(var item in model.CartModel.CartItems){
+                basketItem=new BasketItem();
+                basketItem.Id=item.ProductId.ToString();
+                basketItem.Name="Binocular";
+                basketItem.Category1="Phone";
+                basketItem.ItemType=BasketItemType.PHYSICAL.ToString();
+                basketItem.Price=item.Price.ToString().Split(',')[0];
+            basketItems.Add(basketItem);
+            }
+            
+        
 
-            BasketItem secondBasketItem = new BasketItem();
-            secondBasketItem.Id = "BI102";
-            secondBasketItem.Name = "Game code";
-            secondBasketItem.Category1 = "Game";
-            secondBasketItem.Category2 = "Online Game Items";
-            secondBasketItem.ItemType = BasketItemType.VIRTUAL.ToString();
-            secondBasketItem.Price = "0.5";
-            basketItems.Add(secondBasketItem);
-
-            BasketItem thirdBasketItem = new BasketItem();
-            thirdBasketItem.Id = "BI103";
-            thirdBasketItem.Name = "Usb";
-            thirdBasketItem.Category1 = "Electronics";
-            thirdBasketItem.Category2 = "Usb / Cable";
-            thirdBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            thirdBasketItem.Price = "0.2";
-            basketItems.Add(thirdBasketItem);
             request.BasketItems = basketItems;
 
             return Payment.Create(request, options);

@@ -19,7 +19,7 @@ namespace ShopApp.Business.Concrete
 
         public void Create(Order entity)
         {
-            
+            _orderDAL.Create(entity);
         }
     }
 }
