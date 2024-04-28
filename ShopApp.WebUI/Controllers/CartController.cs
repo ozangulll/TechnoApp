@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ShopApp.Business.Abstract;
+using ShopApp.Entities;
 using ShopApp.WebUI.Identity;
 using ShopApp.WebUI.Models;
 
@@ -18,12 +19,14 @@ namespace ShopApp.WebUI.Controllers
     public class CartController : Controller
     {
         private ICartService _cartService;
+         private IOrderService _orderService;
         private UserManager<AppUser> _userManager;
 
-        public CartController(ICartService cartService, UserManager<AppUser> userManager)
+        public CartController(ICartService cartService, UserManager<AppUser> userManager,IOrderService orderService)
         {
             _cartService = cartService;
             _userManager = userManager;
+            _orderService=orderService;
         }
         public IActionResult Index()
         {
@@ -78,7 +81,64 @@ namespace ShopApp.WebUI.Controllers
         }
         [HttpPost]
         public IActionResult Checkout( OrderModel model){
-            Options options = new Options();
+            if(ModelState.IsValid){
+                var userId=_userManager.GetUserId(User);
+                var cart=_cartService.GetCartByUserId(userId);
+                model.CartModel=new CartModel(){
+                    CartId=cart.Id,
+                    CartItems=cart.CartItems.Select(i=>new CartItemModel(){
+                    CartItemId = i.Id,
+                    ProductId = i.Product.Id,
+                    Name = i.Product.Name,
+                    Price = (decimal)i.Product.Price,
+                    ImageUrl = i.Product.ImageUrl,
+                    Quantity = i.Quantity        
+                    }).ToList()
+                };
+            //ödeme
+            var payment= PaymentProcess(model);
+             if(payment.Status=="success"){
+                SaveOrder(model,payment,userId);
+                ClearCart(userId);
+               return View("Success");
+            }
+            }
+            //sipariş
+            return View();
+        }
+
+        private void SaveOrder(OrderModel model, Payment payment, string userId)
+        {
+            var order=new Order();
+            order.OrderNumber=new Random().Next(111111,999999).ToString();
+            order.OrderState=EnumOrderState.Completed;
+            order.PaymentTypes=EnumPaymentTypes.CreditCard;
+            order.PaymentId=payment.PaymentId;
+            order.ConversationId=payment.ConversationId;
+            order.OrderDate=new DateTime();
+            order.LastName=model.LastName;
+            order.Email=model.Email;
+            order.Phone=model.Phone;
+            order.Address=model.Address;
+            order.UserId=userId;
+            foreach(var item in model.CartModel.CartItems){
+                var orderitem=new OrderItem(){
+                    Price=item.Price,
+                    Quantity=item.Quantity,
+                    ProductId=item.ProductId
+                };
+                order.OrderItems.Add(orderitem);
+            }
+            _orderService.Create(order);
+        }
+
+        private void ClearCart(object userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        private Payment PaymentProcess(OrderModel model){
+              Options options = new Options();
             options.ApiKey = "sandbox-o5DNppzvzJ1teHwBjXRsq2vIa9aPUIMh";
             options.SecretKey = "sandbox-vPxRygk4DRWoXoUnKOdetLBJC96s6EHY";
             options.BaseUrl = "https://sandbox-api.iyzipay.com";    
@@ -163,11 +223,10 @@ namespace ShopApp.WebUI.Controllers
             basketItems.Add(thirdBasketItem);
             request.BasketItems = basketItems;
 
-            Payment payment = Payment.Create(request, options);
-            if(payment.Status=="success"){
-                return View("Success");
-            }
-            return View();
+            return Payment.Create(request, options);
+            // if(payment.Status=="success"){
+            //     return View("Success");
+            // }
         }
     }
 }

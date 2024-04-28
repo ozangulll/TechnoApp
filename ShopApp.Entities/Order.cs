@@ -10,6 +10,11 @@ namespace ShopApp.Entities
          //api kullanacağız 
         //stripe IYZICO olabilir
         //Mesela order için 
+
+        public Order()
+        {
+            OrderItems=new List<OrderItem>();
+        }
         public int Id { get; set; }
         public string OrderNumber { get; set; }
         public DateTime OrderDate { get; set; }
@@ -20,6 +25,7 @@ namespace ShopApp.Entities
         public string ?LastName { get; set; }
         public string ?Address { get; set; }
         public string ?City { get; set; }
+        public string ?Phone { get; set; }
         public string ?Email { get; set; }
         public string ?OrderNote { get; set; }
         public string ?PaymentId { get; set; }
