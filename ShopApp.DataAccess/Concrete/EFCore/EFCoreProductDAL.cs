@@ -96,11 +96,11 @@ namespace ShopApp.DataAccess.Concrete.EFCore
             var category = context.Categories.Find(categoryId);
             if (category != null)
             {
-                entity.ProductCategories.Add(new ProductCategory
-                {
-                    CategoryId = categoryId,
-                    ProductId = entity.Id
-                });
+                entity.ProductCategories = categoryIds.Select(catid => new ProductCategory()
+                    {
+                        CategoryId = catid,
+                        ProductId = entity.Id
+                    }).ToList();
             }
         }
 
